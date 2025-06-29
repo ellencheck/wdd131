@@ -108,3 +108,18 @@ footer {
 footer p {
   margin: 0.5rem 0;
 }
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.card li {
+  margin-bottom: 0.5rem;
+}
+
+.card a {
+  color: #005f73;
+  text-decoration: underline;
+}
