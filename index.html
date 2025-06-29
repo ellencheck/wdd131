@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals by Alina Chekalova. Home page for course activities and portfolio.">
-  <meta name="author" content=" Alina Chekalova">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals by Alina Chekalova. Home page for course activities and portfolio." />
+  <meta name="author" content="Alina Chekalova" />
   <title>WDD 131 – Dynamic Web Fundamentals – Alina Chekalova</title>
-  <link href="styles/base.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+
+  <!-- CSS and JS -->
+  <link href="styles/base.css" rel="stylesheet" />
   <script src="scripts/getdates.js" defer></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
@@ -24,23 +29,31 @@
 
   <main>
     <h1>Alina Chekalova</h1>
+
     <section class="card">
       <h2>About Me</h2>
-      <img src="images/profile.jpg" alt="Profile Photo">
-      <p>Hi! I’m Alina from Chile. Originally, I’m from Ukraine, and I’ve been living in Chile for the past six years. I’m an English teacher by profession, but due to limited opportunities in that field, I decided to start a new journey by studying web development and social media marketing.
+      <div class="card-grid">
+        <img src="images/profile.jpg" alt="Profile Photo" />
+        <p>
+          Hi! I’m Alina from Chile. Originally, I’m from Ukraine, and I’ve been living in Chile for the past six years. I’m an English teacher by profession, but due to limited opportunities in that field, I decided to start a new journey by studying web development and social media marketing.
 
-After graduating, I plan to work as a freelance web developer and digital marketer, helping clients build high-quality websites and strong online brands. I also want to create my own website to promote my services and showcase my work.
+          After graduating, I plan to work as a freelance web developer and digital marketer, helping clients build high-quality websites and strong online brands. I also want to create my own website to promote my services and showcase my work.
 
-In my free time, I love watching travel videos — especially those about planes, ships, yachts, and other vessels. I enjoy sea voyages and hope to explore more of Chile and nearby countries once I improve my financial situation. I also love photography and taking travel videos, especially when I'm near the sea.</p>
+          In my free time, I love watching travel videos — especially those about planes, ships, yachts, and other vessels. I enjoy sea voyages and hope to explore more of Chile and nearby countries once I improve my financial situation. I also love photography and taking travel videos, especially when I'm near the sea.
+        </p>
+      </div>
     </section>
+
     <section class="card">
       <h2>My Goals</h2>
-      <img src="images/goals.jpg" alt="Goals Image">
-      <p>In this course, my goal is to gain strong, practical skills in HTML, CSS, and JavaScript so that I can confidently build modern, responsive, and user-friendly websites. I want to understand how to create web pages that work well on different devices, how to use the DOM and JavaScript to make websites dynamic, and how to use tools like forms, localStorage, and images efficiently.
+      <div class="card-grid">
+        <img src="images/goals.jpg" alt="Goals Image" />
+        <p>
+          In this course, my goal is to gain strong, practical skills in HTML, CSS, and JavaScript so that I can confidently build modern, responsive, and user-friendly websites. I want to understand how to create web pages that work well on different devices, how to use the DOM and JavaScript to make websites dynamic, and how to use tools like forms, localStorage, and images efficiently.
 
-I also aim to apply what I learn to create my own personal website and start building a professional portfolio. As someone preparing for a career in freelance web development and digital marketing, this course is an important step that will help me offer high-quality services to future clients and grow my online presence.
-
-.</p>
+          I also aim to apply what I learn to create my own personal website and start building a professional portfolio. As someone preparing for a career in freelance web development and digital marketing, this course is an important step that will help me offer high-quality services to future clients and grow my online presence.
+        </p>
+      </div>
     </section>
   </main>
 
@@ -50,3 +63,4 @@ I also aim to apply what I learn to create my own personal website and start bui
   </footer>
 </body>
 </html>
+
