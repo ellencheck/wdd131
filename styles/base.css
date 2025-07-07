@@ -123,3 +123,25 @@ footer p {
   color: #005f73;
   text-decoration: underline;
 }
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #005f73;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 900px;
+}
