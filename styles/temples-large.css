@@ -6,7 +6,15 @@
   nav {
     display: flex !important;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end; /* теперь навигация справа */
+    background-color: transparent;
+    width: auto;
+    gap: 1rem;
+  }
+
+  .header-bar {
+    flex-wrap: nowrap;
+    justify-content: space-between; /* логично дополнить, чтобы заголовок слева, nav — справа */
   }
 
   .grid-container {
