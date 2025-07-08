@@ -84,3 +84,14 @@ main h1 {
   --nav-hover-color: #575fcf;
   --font-main: 'Roboto', sans-serif;
 }
+body {
+  font-family: var(--font-main);
+}
+
+header {
+  background-color: var(--primary-color);
+}
+
+nav a:hover {
+  background-color: var(--nav-hover-color);
+}
