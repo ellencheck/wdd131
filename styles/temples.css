@@ -5,18 +5,28 @@ body {
   line-height: 1.5;
 }
 
+/* Общая стилизация header */
 header {
   background-color: #3b3b98;
   color: white;
   padding: 1rem;
-  text-align: center;
-  position: relative;
 }
 
+/* Контейнер для заголовка и навигации */
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Заголовок */
+.header-bar h1 {
+  margin: 0;
+}
+
+/* Гамбургер */
 #menuBtn {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
   font-size: 1.5rem;
   background: none;
   border: none;
@@ -24,10 +34,16 @@ header {
   display: block;
 }
 
+/* Навигация */
 nav {
   display: none;
   flex-direction: column;
   background-color: #2c2c54;
+  width: 100%;
+}
+
+nav.open {
+  display: flex;
 }
 
 nav a {
@@ -40,6 +56,7 @@ nav a:hover {
   background-color: #575fcf;
 }
 
+/* Сетка изображений */
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
