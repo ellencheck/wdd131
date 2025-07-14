@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Chile</title>
+  <link rel="stylesheet" href="styles/place.css" />
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Explore Chile</h1>
+  </header>
+
+  <main>
+    <section class="hero">
+      <picture>
+        <source srcset="images/chile-hero-large.webp" media="(min-width: 600px)">
+        <img src="images/chile-hero-small.webp" alt="Mountains and nature in Chile" />
+      </picture>
+    </section>
+
+    <section class="data">
+      <h2>Information</h2>
+      <p>Capital: Santiago</p>
+      <p>Population: 19.5 million</p>
+      <p>Language: Spanish</p>
+    </section>
+
+    <section class="weather">
+      <h2>Weather <span class="icon-large" aria-hidden="true"></span></h2>
+      <img src="images/weather-icon.svg" alt="Sunny weather" class="icon-mobile" />
+      <p>Temperature: <span id="temp">45</span>°F</p>
+      <p>Wind Speed: <span id="speed">10</span> mph</p>
+      <p>Wind Chill: <span id="chill"></span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> | Last modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>
