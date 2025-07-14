@@ -1,0 +1,58 @@
+:root {
+  --primary-color: #0033a0; /* Blue */
+  --accent-color: #ffffff;
+  --secondary-color: #d52b1e; /* Red */
+  --bg-color: #f9f9f9;
+  --font-family: 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--bg-color);
+  color: #333;
+}
+
+header, footer {
+  background: var(--primary-color);
+  color: var(--accent-color);
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.data, .weather {
+  margin-top: 2rem;
+}
+
+.icon-mobile {
+  display: inline;
+  width: 30px;
+}
+
+.icon-large::after {
+  content: "☀️"; /* sunny icon */
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .icon-mobile {
+    display: none;
+  }
+}
