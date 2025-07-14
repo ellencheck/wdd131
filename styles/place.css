@@ -1,10 +1,10 @@
 :root {
   --primary-color: #0033a0; /* Blue */
   --accent-color: #ffffff;
-  --secondary-color: #d52b1e; /* Red */
   --bg-color: #f9f9f9;
   --font-family: 'Roboto', sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -12,12 +12,12 @@
 body {
   margin: 0;
   font-family: var(--font-family);
-  background: var(--bg-color);
+  background-color: var(--bg-color);
   color: #333;
 }
 
 header, footer {
-  background: var(--primary-color);
+  background-color: var(--primary-color);
   color: var(--accent-color);
   text-align: center;
   padding: 1rem;
@@ -30,73 +30,60 @@ header, footer {
 }
 
 main {
-  padding: 1rem;
   max-width: 800px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-.data, .weather {
-  margin-top: 2rem;
-}
-
-.icon-mobile {
-  display: inline;
-  width: 30px;
-}
-
-.icon-large::after {
-  content: "☀️"; /* sunny icon */
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-@media screen and (min-width: 600px) {
-  .icon-mobile {
-    display: none;
-  }
-}
 .info-layout {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-@media screen and (min-width: 600px) {
+
+@media (min-width: 600px) {
   .info-layout {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
-
-  .data, .weather {
-    width: 48%;
-  }
 }
+
 .data, .weather {
   background: white;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
 }
-/* Показывать иконку только на мобильных */
+
+@media (min-width: 600px) {
+  .data, .weather {
+    width: 48%;
+  }
+}
+
+/* Иконка для мобильных */
 .icon-mobile {
   width: 40px;
   height: auto;
+  display: inline-block;
 }
 
-@media screen and (min-width: 600px) {
+@media (min-width: 600px) {
   .icon-mobile {
     display: none;
   }
 }
 
-/* Показывать ⛅ на больших экранах */
+/* Иконка для больших экранов через ::after */
 .icon-large::after {
   content: "⛅";
   font-size: 1.5rem;
   margin-left: 0.5rem;
 }
 
-@media screen and (max-width: 599px) {
+@media (max-width: 599px) {
   .icon-large::after {
     content: "";
   }
