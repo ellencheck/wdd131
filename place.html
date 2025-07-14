@@ -1,13 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Discover Chile</title>
-  <meta name="description" content="Explore Chile's capital, weather, and culture.">
-  <meta name="author" content="Alina Chekalova">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/place.css">
+  <meta name="description" content="Explore Chile's capital, weather, and culture." />
+  <meta name="author" content="Alina Chekalova" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  
+  <style>
+    :root {
+      --primary-color: #0033a0;
+      --accent-color: #ffffff;
+      --bg-color: #f9f9f9;
+      --font-family: 'Roboto', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: #333;
+    }
+
+    header, footer {
+      background-color: var(--primary-color);
+      color: var(--accent-color);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .info-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media (min-width: 600px) {
+      .info-layout {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+
+    .data, .weather {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+
+    @media (min-width: 600px) {
+      .data, .weather {
+        width: 48%;
+      }
+    }
+
+    .icon-mobile {
+      width: 40px;
+      height: auto;
+      display: inline-block;
+    }
+
+    @media (min-width: 600px) {
+      .icon-mobile {
+        display: none;
+      }
+    }
+
+    .icon-large::after {
+      content: "⛅";
+      font-size: 1.5rem;
+      margin-left: 0.5rem;
+    }
+
+    @media (max-width: 599px) {
+      .icon-large::after {
+        content: "";
+      }
+    }
+  </style>
+
   <script src="scripts/place.js" defer></script>
 </head>
 <body>
