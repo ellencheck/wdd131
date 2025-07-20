@@ -1,27 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Set current year in footer
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
+  const yearEl = document.getElementById("currentYear");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Set last modified date
-  document.getElementById("lastModified").textContent = document.lastModified;
+  const lastModEl = document.getElementById("lastModified");
+  if (lastModEl) lastModEl.textContent = document.lastModified;
 
-  // Calculate wind chill
-  const temp = parseFloat(document.getElementById("temp").textContent);
-  const wind = parseFloat(document.getElementById("wind").textContent);
+  const tempEl = document.getElementById("temp");
+  const windEl = document.getElementById("wind");
   const chillEl = document.getElementById("chill");
 
-  function calculateWindChill(temp, wind) {
-    return (
-      13.12 +
-      0.6215 * temp -
-      11.37 * Math.pow(wind, 0.16) +
-      0.3965 * temp * Math.pow(wind, 0.16)
-    ).toFixed(1);
-  }
+  if (tempEl && windEl && chillEl) {
+    const temp = parseFloat(tempEl.textContent);
+    const wind = parseFloat(windEl.textContent);
 
-  if (temp <= 10 && wind > 1.34) {
-    chillEl.textContent = calculateWindChill(temp, wind) + " °C";
-  } else {
-    chillEl.textContent = "N/A";
+    function calculateWindChill(temp, wind) {
+      return (
+        13.12 +
+        0.6215 * temp -
+        11.37 * Math.pow(wind, 0.16) +
+        0.3965 * temp * Math.pow(wind, 0.16)
+      ).toFixed(1);
+    }
+
+    if (temp <= 10 && wind > 1.34) {
+      chillEl.textContent = calculateWindChill(temp, wind) + " °C";
+    } else {
+      chillEl.textContent = "N/A";
+    }
   }
 });
