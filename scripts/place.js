@@ -11,7 +11,7 @@ function calculateWindChill(t, w) {
 }
 
 if (temp <= 10 && wind > 4.8) {
-  document.getElementById("chill").textContent = calculateWindChill(temp, wind);
+  document.getElementById("chill").textContent = calculateWindChill(temp, wind) + " °C";
 } else {
   document.getElementById("chill").textContent = "N/A";
 }
