@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore the beauty, culture, and weather of Chile on this interactive webpage." />
-  <meta name="author" content="Alina Chekalova" />
-  <title>Chile - Discover Plave</title>
-  <link rel="stylesheet" href="styles/place.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Explore the beauty, culture, and weather of Chile on this interactive webpage.">
+  <meta name="author" content="Alina Chekalova">
+  <title>Chile - Discover Chile</title>
+  <link rel="stylesheet" href="styles/place.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="scripts/place.js" defer></script>
 </head>
 <body>
@@ -16,19 +16,28 @@
   </header>
 
   <main>
-    <div class="image-container">
-      <picture>
-        <source srcset="images/chile-hero-small.webp" type="image/webp" />
-        <img src="images/chile-hero-small.jpg" alt="Beautiful landscape of Chile" />
-      </picture>
+    <section class="info-box top-left">
+      <h2>Did You Know?</h2>
+      <p>Chile is home to the driest desert in the world — the Atacama Desert!</p>
+    </section>
 
-      <section class="info-box">
-        <h2>Did You Know?</h2>
-        <p>Chile is home to the driest desert in the world — the Atacama Desert!</p>
-      </section>
+    <picture>
+      <source srcset="images/chile-hero-large.webp" media="(min-width: 600px)">
+      <img src="images/chile-hero-small.webp" alt="Beautiful landscape of Chile" width="100%" height="auto">
+    </picture>
 
-      <section class="weather-box">
-        <img src="images/weather-icon.svg" alt="Weather icon" />
-        <div>
-          <p>Temp: <span id="temp">9</span> °C</p>
-          <p>Wind: <span id="wind">2.5
+    <section class="weather-box bottom-right">
+      <img src="images/weather-icon.svg" alt="Weather icon">
+      <p><span id="temp">19</span>°C, Intermittent Clouds</p>
+      <p>Wind: <span id="wind">2.5</span> m/s</p>
+      <p>Wind Chill: <span id="chill">N/A</span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Plave. All rights reserved.</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>
+
