@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Discover Chile - vibrant cities, breathtaking landscapes, and rich culture.">
   <meta name="author" content="Ellen Check">
@@ -34,13 +34,16 @@
     <section class="weather">
       <h2>Current Weather</h2>
       <img src="images/weather-icon.svg" alt="weather icon" loading="lazy" width="64" height="64">
-      <p>Sunny, 25°C</p>
+      <p>Sunny, 25&deg;C</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Discover Chile | Designed by Ellen Check</p>
+    <p>&copy; <span id="year"></span> Discover Chile | Designed by Ellen Check</p>
   </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
