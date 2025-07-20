@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals course landing page by Alina Chekalova." />
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals course landing page by Alina Chekalova. This site contains personal information, course assignments, goals, and a growing portfolio of web development and social media marketing projects." />
   <meta name="author" content="Alina Chekalova" />
   <title>WDD 131 – Dynamic Web Fundamentals – Alina Chekalova</title>
 
-  <!-- Google Fonts Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Google Fonts: Roboto & Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <!-- Google Fonts CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@500&display=swap" rel="stylesheet" />
 
-  <!-- Main CSS file in styles directory -->
-  <link rel="stylesheet" href="styles/base.css">
+  <!-- Your own CSS -->
+  <link href="styles/base.css" rel="stylesheet" />
+
+  <!-- External JS file with defer -->
+  <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
@@ -75,11 +78,5 @@
     <p>&copy; <span id="currentyear"></span> Alina Chekalova, Chile</p>
     <p id="lastModified"></p>
   </footer>
-
-  <script>
-    // Add current year and last modified date
-    document.getElementById("currentyear").textContent = new Date().getFullYear();
-    document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
-  </script>
 </body>
 </html>
