@@ -1,7 +1,6 @@
 :root {
   --main-color: #be1e2d;
   --text-color: #333;
-  --bg-overlay: rgba(255, 255, 255, 0.85);
 }
 
 body {
@@ -21,12 +20,13 @@ header, footer {
 main {
   max-width: 900px;
   margin: 1rem auto;
-  position: relative;
   padding: 0 1rem;
 }
 
 .hero {
   position: relative;
+  max-width: 900px;
+  margin: 1rem auto;
 }
 
 .hero picture img {
@@ -36,26 +36,30 @@ main {
   border-radius: 8px;
 }
 
-.data-box,
-.weather-box {
+.data-box {
   position: absolute;
-  background-color: var(--bg-overlay);
+  top: 15px;
+  left: 15px;
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 8px;
   max-width: 280px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   font-size: 0.9rem;
   line-height: 1.4;
 }
 
-.data-box {
-  top: 15px;
-  left: 15px;
-}
-
 .weather-box {
+  position: absolute;
   bottom: 15px;
   right: 15px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .weather-box h2::after {
@@ -73,14 +77,6 @@ main {
 
 footer p {
   margin: 0.3rem 0;
-}
-
-footer p::after {
-  content: " ";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  visibility: hidden;
 }
 
 /* Адаптивность */
