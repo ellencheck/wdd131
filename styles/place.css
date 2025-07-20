@@ -1,23 +1,27 @@
 :root {
-  --main-color: #1565c0; /* единый синий цвет */
-  --text-color: #333;
+  --main-blue: #1565c0;
   --bg-white-opacity: rgba(255, 255, 255, 0.9);
+  --text-color: #333;
+  --font-family: 'Roboto', sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family);
   color: var(--text-color);
   background-color: #f5f5f5;
+  min-height: 100vh;
+  position: relative;
 }
 
-header,
-footer {
-  background-color: var(--main-color);
+header, footer {
+  background-color: var(--main-blue);
   color: white;
   text-align: center;
   padding: 1rem;
@@ -26,22 +30,17 @@ footer {
 main {
   max-width: 900px;
   margin: 1rem auto;
-}
-
-.image-container {
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
-.image-container img {
+picture img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 8px;
 }
 
-/* Info Box — top-left */
+/* Info box top-left */
 .info-box {
   position: absolute;
   top: 10px;
@@ -50,11 +49,11 @@ main {
   padding: 1rem;
   border-radius: 8px;
   max-width: 280px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
   font-size: 0.95rem;
 }
 
-/* Weather Box — bottom-right */
+/* Weather box bottom-right */
 .weather-box {
   position: absolute;
   bottom: 10px;
@@ -63,23 +62,14 @@ main {
   padding: 1rem;
   border-radius: 8px;
   max-width: 280px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
   font-size: 0.95rem;
 }
 
-/* Weather icon */
-.weather-box h2::after {
-  content: " ⛅";
-  margin-left: 8px;
-}
+/* Weather heading icon (emoticon) is in HTML as ⛅ */
 
-footer {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-}
-
-/* Responsive layout */
-@media screen and (max-width: 600px) {
+/* Responsive */
+@media (max-width: 600px) {
   .info-box,
   .weather-box {
     position: static;
