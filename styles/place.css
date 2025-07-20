@@ -1,25 +1,20 @@
-/* === CSS Variables === */
 :root {
   --main-color: #006699;
-  --accent-color: #0099cc;
   --background-color: #f9f9f9;
   --text-color: #333;
   --font-family: 'Open Sans', sans-serif;
-  --box-bg: white;
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  --box-radius: 10px;
+  --accent-color: #0099cc;
 }
 
-/* === Global Styles === */
+/* Глобальные стили */
 body {
   font-family: var(--font-family);
   margin: 0;
-  padding: 0;
-  background-color: var(--background-color);
+@@ -15,22 +15,21 @@
   color: var(--text-color);
-  line-height: 1.6;
 }
 
+/* Header */
 header {
   background-color: var(--main-color);
   color: white;
@@ -27,89 +22,83 @@ header {
   text-align: center;
 }
 
+/* Hero Image */
 .hero img {
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
   display: block;
 }
 
-/* === Main Content Layout === */
+/* Main Content */
 main {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "hero"
-    "overlay";
-}
-
-.hero {
-  grid-area: hero;
-  position: relative;
-}
-
-/* === Overlay Boxes === */
-.data, .weather {
-  position: absolute;
-  background-color: var(--box-bg);
-  box-shadow: var(--box-shadow);
-  border-radius: var(--box-radius);
-  padding: 1rem;
-  width: 280px;
-  max-width: 90%;
-  z-index: 1;
-}
-
-.data {
-  top: 2rem;
-  left: 2rem;
-}
-
-.weather {
-  bottom: 2rem;
-  right: 2rem;
-}
-
-.card h2 {
-  margin-top: 0;
+  max-width: 900px;
+  margin: 2rem auto;
+@@ -40,10 +39,9 @@
+h2 {
   color: var(--main-color);
+  margin-top: 1.5rem;
+  position: relative; /* Для псевдоэлемента */
   position: relative;
 }
 
+/* Добавим псевдоэлемент ::after после заголовка Weather */
 .weather h2::after {
   content: " ⛅";
   position: absolute;
-  right: -2rem;
-  top: 50%;
+@@ -53,7 +51,38 @@
   transform: translateY(-50%);
-  font-size: 1.2rem;
 }
 
-.card ul {
+/* Адаптивность */
+.data, .weather {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.data ul, .weather ul {
   list-style: none;
   padding: 0;
 }
 
-.card li {
-  margin-bottom: 0.5rem;
+.data li, .weather li {
+  margin: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
 }
 
-.weather img.weather-icon {
-  width: 60px;
-  display: none;
+.weather {
+  text-align: center;
 }
 
-/* === Hover Effects === */
-h2:hover {
-  color: var(--accent-color);
-  cursor: pointer;
-  transition: color 0.3s ease;
+.weather img {
+  width: 80px;
+  height: auto;
+  margin: 0.5rem 0;
 }
 
-/* === Footer === */
+@media (max-width: 600px) {
+  main {
+    padding: 0 0.5rem;
+@@ -62,49 +91,51 @@
+  header {
+    padding: 1rem;
+  }
+
+  .hero img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Footer */
 footer {
   background-color: var(--main-color);
   color: white;
@@ -117,21 +106,43 @@ footer {
   padding: 1rem;
   margin-top: 3rem;
 }
+:root {
+  --accent-color: #0099cc;
+}
 
-/* === Responsive === */
-@media (max-width: 800px) {
-  .data, .weather {
-    position: static;
-    margin: 1rem auto;
-  }
+/* Hover на заголовках */
+h2:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
-  .weather img.weather-icon {
-    display: block;
-    margin-top: 0.5rem;
-  }
+/* Карточки */
+.visits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
 
-  main {
-    padding: 1rem;
-    display: block;
-  }
+.visit-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.visit-card img {
+  width: 100%;
+  height: auto;
+}
+
+.visit-card p {
+  padding: 0.5rem;
 }
