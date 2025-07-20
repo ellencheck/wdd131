@@ -3,7 +3,7 @@ document.getElementById("lastModified").textContent = document.lastModified;
 const temp = parseFloat(document.getElementById("temp").textContent);
 const wind = parseFloat(document.getElementById("wind").textContent);
 
-function calculateWindChill(temp, wind) {
+function calcWindChill(temp, wind) {
   return (
     13.12 +
     0.6215 * temp -
@@ -13,7 +13,7 @@ function calculateWindChill(temp, wind) {
 }
 
 if (temp <= 10 && wind > 4.8) {
-  document.getElementById("chill").textContent = calculateWindChill(temp, wind);
+  document.getElementById("chill").textContent = calcWindChill(temp, wind) + " °C";
 } else {
   document.getElementById("chill").textContent = "N/A";
 }
