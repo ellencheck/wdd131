@@ -16,12 +16,6 @@ header {
   text-align: center;
 }
 
-.subtitle {
-  font-style: italic;
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
 /* Hero Image */
 .hero img {
   width: 100%;
