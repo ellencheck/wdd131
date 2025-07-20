@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chile travel and climate guide page for WDD 131 course assignment." />
-  <meta name="author" content="Alina Chekalova" />
-  <title>WDD131 | Chile Travel Page</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <script src="scripts/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chile Country Page - Climate and Travel Guide">
+  <meta name="author" content="Alina Chekalova">
+  <title>Chile</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <header>
@@ -16,26 +14,31 @@
   </header>
 
   <main>
-    <picture>
-      <source srcset="images/chile-hero-large.webp" type="image/webp" />
-      <img src="images/chile-hero-large.jpg" alt="Scenic Chile landscape" width="800" height="500" />
-    </picture>
+    <div class="hero-container">
+      <picture>
+        <source srcset="images/chile-large.webp" media="(min-width: 768px)">
+        <img src="images/chile-small.webp" alt="Scenic view of Chile">
+      </picture>
 
-    <section class="info-box">
-      <h2>About Chile</h2>
-      <p>Chile is a long, narrow country on the western edge of South America.</p>
-    </section>
+      <section class="infobox">
+        <h2>About Chile</h2>
+        <p>Chile is a long, narrow country stretching along South America's western edge. Its diverse landscapes include the Atacama Desert, Andes mountains, and coastal plains.</p>
+      </section>
 
-    <section class="weather-box">
-      <h2>Current Weather</h2>
-      <p>Temperature: <span id="temp">8.3</span>°C</p>
-      <p>Wind Speed: <span id="wind">5.2</span> m/s</p>
-      <p>Wind Chill: <span id="chill">N/A</span></p>
-    </section>
+      <section class="weather-box">
+        <h2>Weather ⛅</h2>
+        <p>Temperature: <span id="temp">8.3</span>°C</p>
+        <p>Wind Speed: <span id="wind">5.2</span> m/s</p>
+        <p>Wind Chill: <span id="chill"></span></p>
+      </section>
+    </div>
   </main>
 
   <footer>
-    <p>Updated: <span id="lastModified"></span> | Alina Chekalova, WDD131</p>
+    <div class="left-footer">© <span id="year"></span></div>
+    <div class="right-footer">Updated: <span id="lastModified"></span> | Alina Chekalova, WDD131</div>
   </footer>
+
+  <script src="scripts/script.js" defer></script>
 </body>
 </html>
