@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the beauty of Viña del Mar, Chile. Explore the beach, local attractions, and more.">
+  <meta name="description" content="Discover Chile - vibrant cities, breathtaking landscapes, and rich culture.">
   <meta name="author" content="Ellen Check">
-  <title>Viña del Mar</title>
+  <title>Discover Chile</title>
   <link rel="stylesheet" href="styles/place.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
-    <h1>Viña del Mar, Chile</h1>
-    <p class="subtitle">The Garden City</p>
+    <h1>Discover Chile</h1>
   </header>
 
   <main>
     <section class="hero">
-      <img src="images/vina-del-mar.jpg" alt="Beautiful view of Viña del Mar coast">
+      <picture>
+        <source srcset="images/chile-hero-small.webp" type="image/webp">
+        <img src="images/chile-hero-small.webp" alt="Chile landscape" loading="lazy" width="1000" height="600">
+      </picture>
     </section>
 
-    <section class="content">
-      <h2>About Viña del Mar</h2>
-      <p>Viña del Mar is a coastal resort city in central Chile. It’s known for its gardens, beaches, and colonial architecture. One of the most popular tourist destinations in the country, the city offers a blend of modern life and natural beauty.</p>
+    <section class="info">
+      <h2>Why Visit Chile?</h2>
+      <p>Chile offers diverse climates, beautiful landscapes, and a rich cultural heritage that attracts visitors year-round.</p>
+    </section>
 
-      <h2>Local Attractions</h2>
-      <ul>
-        <li>Flower Clock (Reloj de Flores)</li>
-        <li>Castillo Wulff</li>
-        <li>Reñaca Beach</li>
-        <li>Viña del Mar Casino</li>
-      </ul>
+    <section class="weather">
+      <h2>Current Weather</h2>
+      <img src="images/weather-icon.svg" alt="weather icon" loading="lazy" width="64" height="64">
+      <p>Sunny, 25°C</p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Ellen Check | WDD 131</p>
+    <p>&copy; 2025 Discover Chile | Designed by Ellen Check</p>
   </footer>
 </body>
-</html>
 
+</html>
