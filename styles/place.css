@@ -1,14 +1,13 @@
 :root {
   --main-color: #be1e2d;
-  --accent-color: #007a3d;
-  --bg-overlay: rgba(255, 255, 255, 0.85);
   --text-color: #333;
+  --bg-overlay: rgba(255, 255, 255, 0.85);
 }
 
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #fff;
+  background: #fff;
   color: var(--text-color);
 }
 
@@ -19,68 +18,63 @@ header, footer {
   padding: 1rem;
 }
 
-.hero {
+main {
+  max-width: 900px;
+  margin: 1rem auto;
   position: relative;
-  display: block;
-  width: 100%;
-  max-height: 500px;
-  overflow: hidden;
+  padding: 0 1rem;
 }
 
-.hero img {
+.hero {
+  position: relative;
+}
+
+.hero picture img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 8px;
 }
 
-main {
-  position: relative;
-  max-width: 900px;
-  margin: 1rem auto;
-  padding: 1rem;
-}
-
-.data-box, .weather-box {
+.data-box,
+.weather-box {
   position: absolute;
   background-color: var(--bg-overlay);
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   max-width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   font-size: 0.9rem;
   line-height: 1.4;
 }
 
 .data-box {
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
 }
 
 .weather-box {
-  bottom: 20px;
-  right: 20px;
+  bottom: 15px;
+  right: 15px;
 }
 
 .weather-box h2::after {
   content: " ⛅";
+  font-size: 1.2em;
+  margin-left: 0.3rem;
 }
 
-.weather-box img {
-  max-width: 50px;
-  height: auto;
-  display: block;
-  margin-top: 0.5rem;
-}
-
-.intro {
-  margin-bottom: 2rem;
+.data-box ul,
+.weather-box ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style-type: disc;
 }
 
 footer p {
   margin: 0.3rem 0;
 }
 
-/* required visible ::after for validation */
 footer p::after {
   content: " ";
   display: inline-block;
@@ -89,25 +83,16 @@ footer p::after {
   visibility: hidden;
 }
 
-/* Media Query for Mobile */
+/* Адаптивность */
+
 @media screen and (max-width: 600px) {
-  header, footer {
-    padding: 0.5rem;
-  }
-
-  .data-box, .weather-box {
+  .data-box,
+  .weather-box {
     position: static;
-    margin: 1rem 0;
-    font-size: 0.85rem;
-    padding: 0.8rem;
     max-width: 100%;
-  }
-
-  .hero img {
-    border-radius: 0;
-  }
-
-  main {
-    padding: 0.5rem;
+    margin: 1rem 0;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
   }
 }
