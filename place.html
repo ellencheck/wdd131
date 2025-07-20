@@ -1,62 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover Chile - vibrant cities, breathtaking landscapes, and rich culture.">
-  <meta name="author" content="Ellen Check">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chile</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/place.css">
-  <script src="scripts/place.js" defer></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
   <header>
     <h1>Chile</h1>
   </header>
 
-  <main>
-    <section class="hero">
-      <picture>
-        <source srcset="images/chile-hero-small.webp" media="(max-width: 600px)">
-        <img src="images/chile-hero-large.webp" alt="Chile landscape" loading="lazy" width="1000" height="600">
-      </picture>
-    </section>
+  <div class="hero">
+    <picture>
+      <source media="(min-width: 1000px)" srcset="images/place-lg-1160.png" />
+      <img src="images/place-sm-full (1).png" alt="Scenery of Chile" />
+    </picture>
+  </div>
 
-    <section class="data">
+  <main>
+    <section class="data card">
       <h2>Data</h2>
       <ul>
-        <li><strong>Area:</strong> 756,102 sq km</li>
-        <li><strong>Population:</strong> 19,116,201</li>
+        <li><strong>Area:</strong> 756,102 km²</li>
+        <li><strong>Population:</strong> 19.49 million</li>
         <li><strong>Capital:</strong> Santiago</li>
-        <li><strong>Languages:</strong> Spanish</li>
-        <li><strong>Currency:</strong> Chilean Peso</li>
-        <li><strong>Time Zone:</strong> UTC-4</li>
+        <li><strong>Language:</strong> Spanish</li>
+        <li><strong>Currency:</strong> Chilean Peso (CLP)</li>
+        <li><strong>Time Zone:</strong> GMT-4</li>
         <li><strong>Calling Code:</strong> +56</li>
         <li><strong>Internet TLD:</strong> .cl</li>
       </ul>
     </section>
 
-    <section class="weather">
-      <h2>Weather <span class="weather-icon"></span></h2>
-      <ul>
-        <li><strong>Temperature:</strong> <span id="temp">10</span> °C</li>
-        <li><strong>Conditions:</strong> Partly Cloudy</li>
-        <li><strong>Wind:</strong> <span id="wind">5</span> km/h</li>
-        <li><strong>Wind Chill:</strong> <span id="chill">N/A</span> °C</li>
-      </ul>
+    <section class="weather card">
+      <h2>Weather</h2>
+      <img src="images/weather-icon.svg" alt="Weather icon" class="weather-icon" />
+      <p><strong>Temperature:</strong> <span id="temp">18</span>°C</p>
+      <p><strong>Wind Speed:</strong> <span id="wind">10</span> km/h</p>
+      <p><strong>Wind Chill:</strong> <span id="chill"></span></p>
     </section>
   </main>
 
   <footer>
-    <p>
-      &copy; <span id="year"></span> Ellen Check | Chile<br>
-      Last Modification: <span id="lastModified"></span>
-    </p>
+    <p>&copy; 2025 Chile Page | WDD 131</p>
   </footer>
+
+  <script src="scripts/weather.js"></script>
 </body>
 </html>
