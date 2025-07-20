@@ -1,8 +1,9 @@
 :root {
   --main-color: #be1e2d;
-  --secondary-color: #007a3d;
+  --secondary-color: #007a3d; /* зеленый был, заменим ниже */
   --text-color: #333;
   --bg-white-opacity: rgba(255, 255, 255, 0.9);
+  --blue-color: #1565c0; /* добавим синий цвет */
 }
 
 * {
@@ -17,7 +18,7 @@ body {
 }
 
 header {
-  background-color: var(--main-color);
+  background-color: var(--blue-color);
   color: white;
   text-align: center;
   padding: 1rem;
@@ -75,7 +76,7 @@ main {
 
 /* Footer styling */
 footer {
-  background-color: var(--secondary-color);
+  background-color: var(--blue-color);
   color: white;
   text-align: center;
   padding: 1rem;
