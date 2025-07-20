@@ -1,58 +1,69 @@
+:root {
+  --main-color: #1565c0;
+  --text-color: #333;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #f9f9f9;
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
+  color: var(--text-color);
 }
 
-header {
-  background-color: #1565c0;
+header,
+footer {
+  background-color: var(--main-color);
   color: white;
-  padding: 1rem;
   text-align: center;
+  padding: 1rem;
 }
 
 main {
   position: relative;
 }
 
-/* Info box — top left */
-.info-box {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.info-box,
+.weather-box {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   max-width: 300px;
 }
 
-/* Weather widget — bottom right */
-.weather-widget {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 1rem;
-  border-radius: 8px;
-  position: absolute;
+.top-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.bottom-right {
   bottom: 1rem;
   right: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.weather-widget img {
-  width: 32px;
-  height: 32px;
+footer::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background-color: white;
+  margin-top: 0.5rem;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #1565c0;
-  color: white;
-  position: relative;
+@media screen and (max-width: 600px) {
+  .info-box,
+  .weather-box {
+    max-width: 90%;
+    font-size: 0.9rem;
+  }
+
+  header, footer {
+    font-size: 1rem;
+  }
 }
+
