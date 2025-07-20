@@ -17,4 +17,3 @@ if (temp <= 10 && wind > 4.8) {
 } else {
   document.getElementById("chill").textContent = "N/A";
 }
-
