@@ -1,12 +1,18 @@
 :root {
-  --main-color: #1565c0;
+  --main-color: #1565c0; /* единый синий цвет */
   --text-color: #333;
+  --bg-white-opacity: rgba(255, 255, 255, 0.9);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
+  background-color: #f5f5f5;
 }
 
 header,
@@ -18,52 +24,73 @@ footer {
 }
 
 main {
-  position: relative;
+  max-width: 900px;
+  margin: 1rem auto;
 }
 
-img {
-  display: block;
+.image-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.image-container img {
   width: 100%;
   height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
-.info-box,
+/* Info Box — top-left */
+.info-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--bg-white-opacity);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 280px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
+}
+
+/* Weather Box — bottom-right */
 .weather-box {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.85);
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--bg-white-opacity);
   padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  max-width: 300px;
+  border-radius: 8px;
+  max-width: 280px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
 }
 
-.top-left {
-  top: 1rem;
-  left: 1rem;
+/* Weather icon */
+.weather-box h2::after {
+  content: " ⛅";
+  margin-left: 8px;
 }
 
-.bottom-right {
-  bottom: 1rem;
-  right: 1rem;
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
-footer::after {
-  content: "";
-  display: block;
-  height: 4px;
-  background-color: white;
-  margin-top: 0.5rem;
-}
-
+/* Responsive layout */
 @media screen and (max-width: 600px) {
   .info-box,
   .weather-box {
-    max-width: 90%;
-    font-size: 0.9rem;
+    position: static;
+    max-width: 100%;
+    margin: 1rem 0;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
   }
 
-  header, footer {
-    font-size: 1rem;
+  main {
+    margin: 0.5rem;
   }
 }
-
