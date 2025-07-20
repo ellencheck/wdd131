@@ -1,100 +1,61 @@
 :root {
-  --main-color: #1565c0; /* Синий для header и footer */
+  --main-blue: #1565c0;
   --text-color: #333;
-  --bg-white-opacity: rgba(255, 255, 255, 0.9);
-}
-
-* {
-  box-sizing: border-box;
+  --background-light: #fff;
 }
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, sans-serif;
   color: var(--text-color);
-  background-color: #f5f5f5;
 }
 
-header {
-  background-color: var(--main-color);
+header, footer {
+  background-color: var(--main-blue);
   color: white;
   text-align: center;
   padding: 1rem;
 }
 
-main {
-  max-width: 900px;
-  margin: 1rem auto;
-}
-
-.image-container {
+.hero {
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
-.image-container img {
+.hero img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
 }
 
-/* Info Box top-left */
-.info-box {
+.infobox {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: var(--bg-white-opacity);
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 1rem;
   border-radius: 8px;
-  max-width: 280px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  font-size: 0.95rem;
+  max-width: 250px;
 }
 
-/* Weather Box bottom-right */
-.weather-box {
+.weatherbox {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: var(--bg-white-opacity);
+  bottom: 1rem;
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 1rem;
   border-radius: 8px;
-  max-width: 280px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  font-size: 0.95rem;
+  max-width: 250px;
 }
 
-/* Weather heading with icon using ::after */
-.weather-box h2::after {
-  content: " ⛅";
-  margin-left: 8px;
+.icon::after {
+  content: "⛅";
+  margin-left: 0.5rem;
 }
 
-/* Footer styling */
-footer {
-  background-color: var(--main-color); /* Тоже синий */
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-}
-
-/* Responsive */
-@media screen and (max-width: 600px) {
-  .info-box,
-  .weather-box {
+@media (max-width: 600px) {
+  .infobox, .weatherbox {
     position: static;
     max-width: 100%;
-    margin: 1rem 0;
-    box-shadow: none;
-    background-color: transparent;
-    padding: 0;
+    margin: 1rem auto;
   }
-
-  main {
-    margin: 0.5rem;
-  }
-}
+} 
