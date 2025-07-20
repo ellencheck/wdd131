@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Chile - Travel Guide</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- остальные теги -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chile</title>
+  <link rel="stylesheet" href="styles/place.css" />
+  <script src="scripts/place.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Chile</h1>
+    <h1>Welcome to Chile</h1>
   </header>
 
   <main>
     <div class="image-container">
       <picture>
-        <source srcset="images/chile-hero-small.webp" media="(max-width: 600px)" />
-        <img src="images/chile-hero-large.webp" alt="Beautiful Chile landscape" />
+        <source srcset="images/chile-hero-large.webp" media="(min-width: 600px)">
+        <img src="images/chile-hero-small.webp" alt="Scenic view of Chile">
       </picture>
 
       <section class="info-box">
         <h2>About Chile</h2>
-        <p>Chile is a long, narrow country stretching along South America's western edge, with more than 6,000 km of Pacific Ocean coastline.</p>
+        <p><strong>Capital:</strong> Santiago</p>
+        <p><strong>Population:</strong> ~19 million</p>
+        <p><strong>Language:</strong> Spanish</p>
+        <p><strong>Currency:</strong> Chilean Peso (CLP)</p>
+        <p><strong>Attractions:</strong> Andes Mountains, Atacama Desert, Patagonia</p>
       </section>
 
       <section class="weather-box">
         <h2>Weather</h2>
-        <p>Temperature: <span id="temp">8</span>°C</p>
-        <p>Wind Speed: <span id="wind">10</span> km/h</p>
-        <p>Wind Chill: <span id="chill"></span></p>
+        <p>Temperature: <span id="temperature">12</span>°C</p>
+        <p>Wind Speed: <span id="windspeed">10</span> km/h</p>
+        <p>Wind Chill: <span id="windchill">N/A</span></p>
       </section>
     </div>
   </main>
