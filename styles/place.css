@@ -1,18 +1,23 @@
+/* === CSS Variables === */
 :root {
   --main-color: #006699;
+  --accent-color: #0099cc;
   --background-color: #f9f9f9;
   --text-color: #333;
   --font-family: 'Open Sans', sans-serif;
-  --accent-color: #0099cc;
+  --box-bg: white;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --box-radius: 10px;
 }
 
+/* === Global Styles === */
 body {
   font-family: var(--font-family);
   margin: 0;
   padding: 0;
-  line-height: 1.6;
   background-color: var(--background-color);
   color: var(--text-color);
+  line-height: 1.6;
 }
 
 header {
@@ -24,21 +29,53 @@ header {
 
 .hero img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 8px;
+  height: auto;
   display: block;
 }
 
+/* === Main Content Layout === */
 main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "hero"
+    "overlay";
 }
 
-h2 {
+.hero {
+  grid-area: hero;
+  position: relative;
+}
+
+/* === Overlay Boxes === */
+.data, .weather {
+  position: absolute;
+  background-color: var(--box-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--box-radius);
+  padding: 1rem;
+  width: 280px;
+  max-width: 90%;
+  z-index: 1;
+}
+
+.data {
+  top: 2rem;
+  left: 2rem;
+}
+
+.weather {
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.card h2 {
+  margin-top: 0;
   color: var(--main-color);
-  margin-top: 1.5rem;
   position: relative;
 }
 
@@ -46,57 +83,33 @@ h2 {
   content: " ⛅";
   position: absolute;
   right: -2rem;
-  font-size: 1.2rem;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 1.2rem;
 }
 
-.data, .weather {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 1rem;
-  margin-top: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.data ul, .weather ul {
+.card ul {
   list-style: none;
   padding: 0;
 }
 
-.data li, .weather li {
-  margin: 0.5rem 0;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.5rem;
+.card li {
+  margin-bottom: 0.5rem;
 }
 
-.weather {
-  text-align: center;
+.weather img.weather-icon {
+  width: 60px;
+  display: none;
 }
 
-.weather img {
-  width: 80px;
-  height: auto;
-  margin: 0.5rem 0;
+/* === Hover Effects === */
+h2:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-@media (max-width: 600px) {
-  main {
-    padding: 0 0.5rem;
-  }
-
-  header {
-    padding: 1rem;
-  }
-
-  .hero img {
-    aspect-ratio: 4 / 3;
-  }
-}
-
+/* === Footer === */
 footer {
   background-color: var(--main-color);
   color: white;
@@ -105,37 +118,20 @@ footer {
   margin-top: 3rem;
 }
 
-h2:hover {
-  color: var(--accent-color);
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
+/* === Responsive === */
+@media (max-width: 800px) {
+  .data, .weather {
+    position: static;
+    margin: 1rem auto;
+  }
 
-.visits {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
+  .weather img.weather-icon {
+    display: block;
+    margin-top: 0.5rem;
+  }
 
-.visit-card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.visit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.visit-card img {
-  width: 100%;
-  height: auto;
-}
-
-.visit-card p {
-  padding: 0.5rem;
+  main {
+    padding: 1rem;
+    display: block;
+  }
 }
