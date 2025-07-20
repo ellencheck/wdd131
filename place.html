@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chile Country Page - Climate and Travel Guide">
-  <meta name="author" content="Alina Chekalova">
-  <title>Chile</title>
-  <link rel="stylesheet" href="styles/place.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chile - WDD131 Country Page</title>
+  <meta name="description" content="Responsive webpage about Chile including weather and info box." />
+  <meta name="author" content="Alina Chekalova" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="scripts/place.js" defer></script>
 </head>
 <body>
   <header>
@@ -14,34 +15,29 @@
   </header>
 
   <main>
-    <div class="hero">
+    <section class="hero">
       <picture>
-        <source srcset="images/chile-large.webp" media="(min-width: 768px)">
-        <img src="images/chile-small.webp" alt="Scenic view of Chile" loading="lazy">
+        <source srcset="images/chile-hero-small.webp" media="(max-width: 600px)" />
+        <img src="images/chile-hero-large.webp" alt="Beautiful Chile landscape" />
       </picture>
 
-      <section class="infobox">
+      <aside class="infobox">
         <h2>About Chile</h2>
-        <p>Chile is a long, narrow country stretching along South America's western edge, with more than 6,000km of Pacific Ocean coastline.</p>
-        <p>Capital: Santiago</p>
-        <p>Language: Spanish</p>
-      </section>
+        <p>Chile is a long, narrow country stretching along South America's western edge, with more than 6,000 km of Pacific Ocean coastline.</p>
+      </aside>
 
-      <section class="weather-box">
-        <h2>Weather ⛅</h2>
-        <p>Temperature: <span id="temp">8.3</span>°C</p>
-        <p>Wind Speed: <span id="wind">5.2</span> m/s</p>
-        <p>Wind Chill: <span id="chill">N/A</span></p>
-      </section>
-    </div>
+      <aside class="weather-box">
+        <h2>Weather</h2>
+        <p>Temperature: <span id="temp">8</span>°C</p>
+        <p>Wind Speed: <span id="wind">10</span> km/h</p>
+        <p>Wind Chill: <span id="chill"></span></p>
+        <img src="images/weather-icon.svg" alt="Weather icon" class="weather-icon" />
+      </aside>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> | Updated: <span id="lastModified"></span></p>
-    <p>Alina Chekalova | WDD 131</p>
+    <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
-
-  <script src="scripts/place.js" defer></script>
 </body>
 </html>
-
