@@ -1,94 +1,47 @@
 :root {
-  --main-color: #be1e2d;
-  --text-color: #333;
+  --main-bg: #e3f2fd;
+  --footer-bg: #1565c0;
 }
 
 body {
+  font-family: Arial, sans-serif;
+  background-color: var(--main-bg);
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background: #fff;
-  color: var(--text-color);
+  padding: 0;
 }
 
-header, footer {
-  background-color: var(--main-color);
+header {
+  background-color: #0d47a1;
   color: white;
+  padding: 1rem;
   text-align: center;
-  padding: 1rem;
-}
-
-main {
-  max-width: 900px;
-  margin: 1rem auto;
-  padding: 0 1rem;
-}
-
-.hero {
   position: relative;
-  max-width: 900px;
-  margin: 1rem auto;
 }
 
-.hero picture img {
+.weather-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+footer {
+  background-color: var(--footer-bg);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
 }
 
-.data-box {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 280px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  font-size: 0.9rem;
-  line-height: 1.4;
+footer .left-footer::after {
+  content: " 🌐";
 }
-
-.weather-box {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 280px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.weather-box h2::after {
-  content: " ⛅";
-  font-size: 1.2em;
-  margin-left: 0.3rem;
-}
-
-.data-box ul,
-.weather-box ul {
-  margin: 0;
-  padding-left: 1.2rem;
-  list-style-type: disc;
-}
-
-footer p {
-  margin: 0.3rem 0;
-}
-
-/* Адаптивность */
 
 @media screen and (max-width: 600px) {
-  .data-box,
-  .weather-box {
-    position: static;
-    max-width: 100%;
-    margin: 1rem 0;
-    box-shadow: none;
-    background-color: transparent;
-    padding: 0;
+  footer {
+    flex-direction: column;
+    text-align: center;
   }
 }
