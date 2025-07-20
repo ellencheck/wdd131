@@ -1,5 +1,5 @@
 :root {
-  --main-color: #be1e2d;
+  --main-color: #0047ab; /* синий */
   --secondary-color: #007a3d;
   --text-color: #333;
 }
@@ -52,4 +52,3 @@ img {
     vertical-align: middle;
   }
 }
-
