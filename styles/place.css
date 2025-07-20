@@ -1,47 +1,59 @@
 :root {
-  --main-bg: #e3f2fd;
-  --footer-bg: #1565c0;
+  --main-bg: #f0f8ff;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+  --text-light: #fff;
+  --accent: #1565c0;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--main-bg);
   margin: 0;
-  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--main-bg);
 }
 
-header {
-  background-color: #0d47a1;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+.hero {
   position: relative;
+  height: 100vh;
+  background: url('images/chile-hero-large.webp') center/cover no-repeat;
 }
 
-.weather-info {
+.info-box,
+.weather-box {
+  position: absolute;
+  color: var(--text-light);
+  background-color: var(--overlay-bg);
   padding: 1rem;
-  text-align: center;
+  border-radius: 0.5rem;
+  max-width: 300px;
+}
+
+.info-box {
+  top: 2rem;
+  left: 2rem;
+}
+
+.weather-box {
+  bottom: 2rem;
+  right: 2rem;
 }
 
 footer {
-  background-color: var(--footer-bg);
+  background-color: var(--accent);
   color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  text-align: center;
+  padding: 0.75rem;
 }
 
-footer .left-footer::after {
-  content: " 🌐";
-}
+/* Responsive */
+@media (max-width: 600px) {
+  .info-box, .weather-box {
+    position: static;
+    margin: 1rem auto;
+    width: 90%;
+  }
 
-@media screen and (max-width: 600px) {
-  footer {
-    flex-direction: column;
-    text-align: center;
+  .hero {
+    height: auto;
+    padding-bottom: 2rem;
   }
 }
