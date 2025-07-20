@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="Explore the beauty, culture, and weather of Chile on this interactive webpage.">
-  <meta name="author" content="Alina Chekalova">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the beauty, culture, and weather of Chile on this interactive webpage." />
+  <meta name="author" content="Alina Chekalova" />
   <title>Chile - Discover Plave</title>
-  <link rel="stylesheet" href="styles/place.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/place.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="scripts/place.js" defer></script>
 </head>
 <body>
   <header>
@@ -15,25 +16,19 @@
   </header>
 
   <main>
-    <section class="info-box top-left">
-      <h2>Did You Know?</h2>
-      <p>Chile is home to the driest desert in the world — the Atacama Desert!</p>
-    </section>
+    <div class="image-container">
+      <picture>
+        <source srcset="images/chile-hero-small.webp" type="image/webp" />
+        <img src="images/chile-hero-small.jpg" alt="Beautiful landscape of Chile" />
+      </picture>
 
-    <picture>
-      <source srcset="images/chile-hero-small.webp" type="image/webp">
-      <img src="images/chile-hero-small.jpg" alt="Beautiful landscape of Chile" width="100%" height="auto">
-    </picture>
+      <section class="info-box">
+        <h2>Did You Know?</h2>
+        <p>Chile is home to the driest desert in the world — the Atacama Desert!</p>
+      </section>
 
-    <section class="weather-widget bottom-right">
-      <img src="images/weather-icon.svg" alt="Weather icon">
-      <p>19°C, Intermittent Clouds</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Plave. All rights reserved.</p>
-  </footer>
-</body>
-</html>
-
+      <section class="weather-box">
+        <img src="images/weather-icon.svg" alt="Weather icon" />
+        <div>
+          <p>Temp: <span id="temp">9</span> °C</p>
+          <p>Wind: <span id="wind">2.5
