@@ -84,3 +84,10 @@ picture img {
     margin: 0.5rem;
   }
 }
+.weather-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
