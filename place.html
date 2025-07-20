@@ -1,56 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Discover Chile</title>
-  <meta name="description" content="Explore Chile's capital, weather, and culture." />
-  <meta name="author" content="Alina Chekalova" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-
-  <!-- Styles and JS -->
-  <link rel="stylesheet" href="styles/place.css" />
-  <script src="scripts/place.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the beauty of Viña del Mar, Chile. Explore the beach, local attractions, and more.">
+  <meta name="author" content="Ellen Check">
+  <title>Viña del Mar</title>
+  <link rel="stylesheet" href="styles/place.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Explore Chile</h1>
+    <h1>Viña del Mar, Chile</h1>
+    <p class="subtitle">The Garden City</p>
   </header>
 
   <main>
     <section class="hero">
-      <picture>
-        <source srcset="images/chile-hero-large.webp" media="(min-width: 600px)" />
-        <img src="images/chile-hero-small.webp" alt="Mountains and nature in Chile" />
-      </picture>
+      <img src="images/vina-del-mar.jpg" alt="Beautiful view of Viña del Mar coast">
     </section>
 
-    <div class="info-layout">
-      <section class="data">
-        <h2>Information</h2>
-        <p>Capital: Santiago</p>
-        <p>Population: 19.5 million</p>
-        <p>Language: Spanish</p>
-      </section>
+    <section class="content">
+      <h2>About Viña del Mar</h2>
+      <p>Viña del Mar is a coastal resort city in central Chile. It’s known for its gardens, beaches, and colonial architecture. One of the most popular tourist destinations in the country, the city offers a blend of modern life and natural beauty.</p>
 
-      <section class="weather">
-        <h2>Weather <span class="icon-large" aria-hidden="true"></span></h2>
-        <img src="images/weather-icon.svg" alt="Sunny weather" class="icon-mobile" />
-        <p>Temperature: <span id="temp">45</span>°F</p>
-        <p>Wind Speed: <span id="speed">10</span> mph</p>
-        <p>Wind Chill: <span id="chill"></span></p>
-      </section>
-    </div>
-
-    <a href="#" class="btn-more">Learn more about Chile</a>
+      <h2>Local Attractions</h2>
+      <ul>
+        <li>Flower Clock (Reloj de Flores)</li>
+        <li>Castillo Wulff</li>
+        <li>Reñaca Beach</li>
+        <li>Viña del Mar Casino</li>
+      </ul>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> | Last modified: <span id="lastModified"></span></p>
+    <p>© 2025 Ellen Check | WDD 131</p>
   </footer>
 </body>
 </html>
+
