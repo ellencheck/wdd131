@@ -6,7 +6,7 @@
   <meta name="description" content="Chile Country Page - Climate and Travel Guide">
   <meta name="author" content="Alina Chekalova">
   <title>Chile</title>
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/place.css">
 </head>
 <body>
   <header>
@@ -14,31 +14,34 @@
   </header>
 
   <main>
-    <div class="hero-container">
+    <div class="hero">
       <picture>
         <source srcset="images/chile-large.webp" media="(min-width: 768px)">
-        <img src="images/chile-small.webp" alt="Scenic view of Chile">
+        <img src="images/chile-small.webp" alt="Scenic view of Chile" loading="lazy">
       </picture>
 
       <section class="infobox">
         <h2>About Chile</h2>
-        <p>Chile is a long, narrow country stretching along South America's western edge. Its diverse landscapes include the Atacama Desert, Andes mountains, and coastal plains.</p>
+        <p>Chile is a long, narrow country stretching along South America's western edge, with more than 6,000km of Pacific Ocean coastline.</p>
+        <p>Capital: Santiago</p>
+        <p>Language: Spanish</p>
       </section>
 
       <section class="weather-box">
         <h2>Weather ⛅</h2>
         <p>Temperature: <span id="temp">8.3</span>°C</p>
         <p>Wind Speed: <span id="wind">5.2</span> m/s</p>
-        <p>Wind Chill: <span id="chill"></span></p>
+        <p>Wind Chill: <span id="chill">N/A</span></p>
       </section>
     </div>
   </main>
 
   <footer>
-    <div class="left-footer">© <span id="year"></span></div>
-    <div class="right-footer">Updated: <span id="lastModified"></span> | Alina Chekalova, WDD131</div>
+    <p>&copy; <span id="year"></span> | Updated: <span id="lastModified"></span></p>
+    <p>Alina Chekalova | WDD 131</p>
   </footer>
 
-  <script src="scripts/script.js" defer></script>
+  <script src="scripts/place.js" defer></script>
 </body>
 </html>
+
