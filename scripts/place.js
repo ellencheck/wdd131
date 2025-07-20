@@ -5,7 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let chill = "N/A";
   if (temp <= 10 && wind > 1.34) {
-    chill = (13.12 + 0.6215 * temp - 11.37 * Math.pow(wind, 0.16) + 0.3965 * temp * Math.pow(wind, 0.16)).toFixed(1) + " °C";
+    chill = (
+      13.12 +
+      0.6215 * temp -
+      11.37 * Math.pow(wind, 0.16) +
+      0.3965 * temp * Math.pow(wind, 0.16)
+    ).toFixed(1) + " °C";
   }
 
   chillEl.textContent = chill;
