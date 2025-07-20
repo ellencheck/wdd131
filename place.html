@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chile - WDD131 Assignment</title>
-  <meta name="description" content="A responsive web page about Chile featuring weather, design, and layout concepts.">
-  <meta name="author" content="Your Name Here">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/style.css">
+  <meta name="description" content="A responsive web page about Chile featuring weather, design, and layout concepts." />
+  <meta name="author" content="Your Name Here" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/style.css" />
+  
+  <!-- JS -->
   <script src="scripts/script.js" defer></script>
 </head>
 <body>
@@ -17,33 +23,35 @@
     <h1>Chile</h1>
   </header>
 
-  <picture class="hero">
-    <source srcset="images/chile-hero-small.webp" media="(max-width: 600px)">
-    <img src="images/chile-hero-large.webp" alt="Beautiful Chile landscape">
-  </picture>
+  <div class="hero">
+    <picture>
+      <source srcset="images/chile-hero-small.webp" media="(max-width: 600px)" />
+      <img src="images/chile-hero-large.webp" alt="Beautiful Chile landscape" />
+    </picture>
 
-  <main>
-    <section class="intro">
+    <div class="data-box">
       <h2>Welcome to Chile</h2>
-      <p>Chile is a long, narrow country stretching along South America's western edge, with more than 6,000km of Pacific Ocean coastline.</p>
-    </section>
+      <p>
+        Chile is a long, narrow country stretching along South America's western edge,
+        with more than 6,000km of Pacific Ocean coastline.
+      </p>
+    </div>
 
-    <section class="weather">
+    <div class="weather-box">
       <h2>Weather</h2>
-      <div class="weather-boxes">
-        <p>Temperature: <span id="temp">8</span>°C</p>
-        <p>Wind Speed: <span id="wind">10</span> km/h</p>
-        <p>Wind Chill: <span id="chill"></span></p>
-        <div class="icon">
-          <img src="images/weather.svg" alt="Weather icon" class="svg-icon">
-        </div>
-      </div>
-    </section>
-  </main>
+      <p>Temperature: <span id="temp">8</span>°C</p>
+      <p>Wind Speed: <span id="wind">10</span> km/h</p>
+      <p>Wind Chill: <span id="chill"></span></p>
+      <img src="images/weather.svg" alt="Weather icon" class="svg-icon" />
+    </div>
+  </div>
+
+  <main></main>
 
   <footer>
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
 </body>
 </html>
+
 
