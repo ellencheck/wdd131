@@ -73,14 +73,14 @@ const temples = [
     imageUrl:
       "https://churchofjesuschrist.org/content/dam/church/temples/europe/paris-france-temple-2.jpg"
   },
-  {
-    templeName: "Rome Italy",
-    location: "Rome, Italy",
-    dedicated: "2019, March, 17",
-    area: 13500,
-    imageUrl:
-      "https://churchofjesuschrist.org/content/dam/church/temples/europe/rome-italy-temple-2.jpg"
-  }
+ {
+  templeName: "Rome Italy",
+  location: "Rome, Italy",
+  dedicated: "2019, March, 17",
+  area: 13500,
+  imageUrl: "https://www.churchofjesuschrist.org/imgs/08d5a9e90a0c8347a61d17335775c5e118b33a9a/full/500%2C/0/default"
+}
+
 ];
 
 // Получаем DOM элементы
