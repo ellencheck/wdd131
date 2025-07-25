@@ -5,14 +5,12 @@ body {
   line-height: 1.5;
 }
 
-/* Общая стилизация header */
 header {
   background-color: #3b3b98;
   color: white;
   padding: 1rem;
 }
 
-/* Контейнер для заголовка и навигации */
 .header-bar {
   display: flex;
   align-items: center;
@@ -20,12 +18,10 @@ header {
   flex-wrap: wrap;
 }
 
-/* Заголовок */
 .header-bar h1 {
   margin: 0;
 }
 
-/* Гамбургер */
 #menuBtn {
   font-size: 1.5rem;
   background: none;
@@ -34,7 +30,6 @@ header {
   display: block;
 }
 
-/* Навигация */
 nav {
   display: none;
   flex-direction: column;
@@ -50,16 +45,16 @@ nav a {
   padding: 1rem;
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 nav a:hover {
   background-color: #575fcf;
 }
 
-/* Сетка изображений */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
@@ -67,6 +62,10 @@ nav a:hover {
 figure {
   margin: 0;
   text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background-color: #f9f9f9;
 }
 
 figure img {
@@ -74,27 +73,13 @@ figure img {
   height: auto;
   border-radius: 8px;
 }
-main h1 {
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-:root {
-  --primary-color: #3b3b98;
-  --nav-hover-color: #575fcf;
-  --font-main: 'Roboto', sans-serif;
-}
-body {
-  font-family: var(--font-main);
+
+figcaption {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-header {
-  background-color: var(--primary-color);
-}
-
-nav a:hover {
-  background-color: var(--nav-hover-color);
-}
 footer {
   background-color: #3b3b98;
   color: white;
