@@ -97,6 +97,11 @@ function createTempleCard(temple) {
   img.alt = temple.templeName;
   img.loading = "lazy"; // lazy loading
 
+  // Подмена картинки на заглушку, если не загрузилась
+  img.onerror = () => {
+    img.src = "https://via.placeholder.com/400x250?text=Image+not+available";
+  };
+
   const caption = document.createElement("figcaption");
   caption.innerHTML = `
     <strong>${temple.templeName}</strong><br>
@@ -172,4 +177,3 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 // Первоначальный показ всех храмов
 displayTemples(temples);
-
