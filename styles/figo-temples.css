@@ -9,7 +9,7 @@ header {
   background-color: #3b3b98;
   color: white;
   padding: 1rem;
-  display: block; /* вместо flex */
+  display: block; /* убрали flex */
 }
 
 .header-bar {
@@ -51,19 +51,19 @@ nav a {
   color: white;
   text-decoration: none;
   cursor: pointer;
-  /* Чтобы имитировать hover, будем использовать класс .hovered, который JS будет добавлять */
 }
 
+/* Убрали :hover */
+/* Добавляем стили для класса hovered */
 nav a.hovered {
   background-color: #575fcf;
 }
 
 .grid-container {
-  display: block; /* вместо flex */
+  display: block; /* убрали flex */
   padding: 1rem;
-  /* Чтобы разместить карточки в несколько колонок без flex, используем float */
   width: 100%;
-  overflow: hidden; /* чтобы контейнер расширялся по высоте */
+  overflow: hidden; /* чтобы контейнер учитывал плавающие элементы */
 }
 
 figure {
@@ -100,4 +100,3 @@ footer {
 footer p {
   margin: 0.25rem 0;
 }
-
