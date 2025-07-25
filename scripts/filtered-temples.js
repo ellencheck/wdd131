@@ -53,21 +53,21 @@ const temples = [
     location: "Le Chesnay, France",
     dedicated: "2017, May, 21",
     area: 12000,
-    imageUrl: "https://www.churchofjesuschrist.org/imgs/5ec026c4efeaaa19a98e40f0f1b4c6069ae63517/full/320%2C0/default"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/paris-france/400x250/paris-france-temple-exterior-1075205-wallpaper.jpg"
   },
   {
     templeName: "Rome Italy",
     location: "Rome, Italy",
     dedicated: "2019, March, 17",
     area: 13500,
-    imageUrl: "https://www.churchofjesuschrist.org/imgs/08d5a9e90a0c8347a61d17335775c5e118b33a9a/full/3840%2C0/default"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-exterior-1528202-wallpaper.jpg"
   },
   {
     templeName: "Kyiv Ukraine",
     location: "Sofiivska Borshchahivka, Kyiv, Ukraine",
     dedicated: "2010, August, 29",
     area: 2061,
-    imageUrl: "https://www.churchofjesuschrist.org/media/image/kyiv-ukraine-temple-lds-40bfa12?lang=rus"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/kyiv-ukraine/400x250/kyiv-ukraine-temple-lds-1129616-wallpaper.jpg"
   }
 ];
 
