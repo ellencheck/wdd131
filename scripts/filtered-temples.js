@@ -162,3 +162,7 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 // По умолчанию показываем все храмы
 displayTemples(temples);
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("mouseenter", () => link.classList.add("hovered"));
+  link.addEventListener("mouseleave", () => link.classList.remove("hovered"));
+});
