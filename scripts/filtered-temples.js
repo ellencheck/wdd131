@@ -55,7 +55,6 @@ const temples = [
     imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg",
   },
-  // Добавляем ещё 3 храма, как просили (включая Рим вместо Австралии)
   {
     templeName: "Tokyo Japan",
     location: "Tokyo, Japan",
@@ -82,12 +81,12 @@ const temples = [
   },
 ];
 
-// Получаем элементы
+// DOM Elements
 const templesContainer = document.getElementById("templesContainer");
 const navMenu = document.getElementById("navMenu");
 const menuBtn = document.getElementById("menuBtn");
 
-// Функция создания карточки храма
+// Create a temple card element
 function createTempleCard(temple) {
   const figure = document.createElement("figure");
 
@@ -110,13 +109,13 @@ function createTempleCard(temple) {
   return figure;
 }
 
-// Функция отображения массива храмов
+// Display temples
 function displayTemples(templesArray) {
   templesContainer.innerHTML = "";
   templesArray.forEach(t => templesContainer.appendChild(createTempleCard(t)));
 }
 
-// Фильтрация по критериям
+// Filter temples by criteria
 function filterTemples(criteria) {
   let filtered = [];
   switch (criteria) {
@@ -138,31 +137,32 @@ function filterTemples(criteria) {
   displayTemples(filtered);
 }
 
-// Обработка клика по гамбургеру
+// Hamburger menu toggle
 menuBtn.addEventListener("click", () => {
   navMenu.classList.toggle("open");
   menuBtn.textContent = navMenu.classList.contains("open") ? "✖" : "☰";
 });
 
-// Обработка клика по пунктам меню
+// Nav menu links filter + hovered effect via JS (no :hover CSS)
 navMenu.addEventListener("click", (e) => {
   if (e.target.tagName === "A") {
     e.preventDefault();
     const filter = e.target.dataset.filter;
     filterTemples(filter);
-    // Закрыть меню после выбора (для мобильных)
     navMenu.classList.remove("open");
     menuBtn.textContent = "☰";
   }
 });
 
-// Динамическая дата в footer
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
-
-// По умолчанию показываем все храмы
-displayTemples(temples);
+// Add hovered class on mouse enter/leave to replace :hover CSS
 document.querySelectorAll("nav a").forEach(link => {
   link.addEventListener("mouseenter", () => link.classList.add("hovered"));
   link.addEventListener("mouseleave", () => link.classList.remove("hovered"));
 });
+
+// Footer dynamic date
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = document.lastModified;
+
+// Show all temples by default
+displayTemples(temples);
