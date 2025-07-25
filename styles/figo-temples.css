@@ -9,21 +9,29 @@ header {
   background-color: #3b3b98;
   color: white;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block; /* вместо flex */
+}
+
+.header-bar {
+  display: table;
+  width: 100%;
 }
 
 .header-bar h1 {
+  display: table-cell;
+  vertical-align: middle;
   margin: 0;
   font-size: 1.5rem;
 }
 
 #menuBtn {
+  display: table-cell;
+  vertical-align: middle;
   font-size: 1.5rem;
   background: none;
   border: none;
   color: white;
+  text-align: right;
   cursor: pointer;
 }
 
@@ -42,24 +50,26 @@ nav a {
   padding: 1rem;
   color: white;
   text-decoration: none;
+  cursor: pointer;
+  /* Чтобы имитировать hover, будем использовать класс .hovered, который JS будет добавлять */
 }
 
-nav a:hover,
 nav a.hovered {
   background-color: #575fcf;
 }
 
 .grid-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: block; /* вместо flex */
   padding: 1rem;
-  justify-content: center;
+  /* Чтобы разместить карточки в несколько колонок без flex, используем float */
+  width: 100%;
+  overflow: hidden; /* чтобы контейнер расширялся по высоте */
 }
 
 figure {
-  flex: 0 1 300px;
-  margin: 0;
+  float: left;
+  width: 300px;
+  margin: 0.5rem;
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
