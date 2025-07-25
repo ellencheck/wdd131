@@ -66,13 +66,12 @@ const temples = [
       "https://churchofjesuschrist.org/content/dam/church/temples/asia/tokyo-japan-temple-2.jpg"
   },
   {
-    templeName: "Paris France",
-    location: "Le Chesnay, France",
-    dedicated: "2017, May, 21",
-    area: 12000,
-    imageUrl:
-      "https://churchofjesuschrist.org/content/dam/church/temples/europe/paris-france-temple-2.jpg"
-  },
+  templeName: "Paris France",
+  location: "Le Chesnay, France",
+  dedicated: "2017, May, 21",
+  area: 12000,
+  imageUrl: "https://churchofjesuschrist.org/content/dam/church/temples/europe/paris-france-temple-2.jpg"
+}
  {
   templeName: "Rome Italy",
   location: "Rome, Italy",
