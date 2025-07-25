@@ -1,3 +1,4 @@
+// Массив храмов с исходными данными + 3 новых
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -55,31 +56,34 @@ const temples = [
     imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
-  // Добавим 3 новых
+  // Новые 3 храма
   {
     templeName: "Tokyo Japan",
     location: "Tokyo, Japan",
     dedicated: "1980, October, 27",
     area: 50000,
     imageUrl:
-      "https://www.churchofjesuschrist.org/imgs/7f7a6a4f6c3f4f1bb787d765e390fa07f3e78499/full/800%2C0/default"
+      "https://churchofjesuschrist.org/content/dam/church/temples/asia/tokyo-japan-temple-2.jpg"
   },
   {
     templeName: "Paris France",
     location: "Le Chesnay, France",
     dedicated: "2017, May, 21",
     area: 12000,
-    imageUrl: "https://www.churchofjesuschrist.org/imgs/df6b96801c9f11ec99eeeeeeac1ea2207e7c517b/full/800%2C0/default"
-  },
+    imageUrl:
+      "https://churchofjesuschrist.org/content/dam/church/temples/europe/paris-france-temple-2.jpg"
+  }, // <-- ВАЖНО: запятая здесь, чтобы следующий объект был корректным
   {
     templeName: "Rome Italy",
     location: "Rome, Italy",
     dedicated: "2019, March, 17",
     area: 13500,
-    imageUrl: "https://www.churchofjesuschrist.org/imgs/08d5a9e90a0c8347a61d17335775c5e118b33a9a/full/500%2C0/default"
+    imageUrl:
+      "https://www.churchofjesuschrist.org/imgs/08d5a9e90a0c8347a61d17335775c5e118b33a9a/full/500%2C/0/default"
   }
 ];
-/ Получаем DOM элементы
+
+// Получаем DOM элементы
 const templesContainer = document.getElementById("templesContainer");
 const navMenu = document.getElementById("navMenu");
 const menuBtn = document.getElementById("menuBtn");
@@ -91,7 +95,12 @@ function createTempleCard(temple) {
   const img = document.createElement("img");
   img.src = temple.imageUrl;
   img.alt = temple.templeName;
-  img.loading = "lazy"; // lazy loading
+  img.loading = "lazy"; // ленивое загрузка
+
+  // Если картинка не загрузилась, заменяем на заглушку
+  img.onerror = () => {
+    img.src = "https://via.placeholder.com/400x250?text=Image+not+available";
+  };
 
   const caption = document.createElement("figcaption");
   caption.innerHTML = `
@@ -121,16 +130,10 @@ function filterTemples(criteria) {
 
   switch(criteria) {
     case "old":
-      filtered = temples.filter(t => {
-        const year = new Date(t.dedicated).getFullYear();
-        return year < 1900;
-      });
+      filtered = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
       break;
     case "new":
-      filtered = temples.filter(t => {
-        const year = new Date(t.dedicated).getFullYear();
-        return year > 2000;
-      });
+      filtered = temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
       break;
     case "large":
       filtered = temples.filter(t => t.area > 90000);
@@ -168,3 +171,4 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 // Первоначальный показ всех храмов
 displayTemples(temples);
+
