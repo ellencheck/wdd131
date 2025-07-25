@@ -57,13 +57,13 @@ const temples = [
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
   // Добавим 3 новых
- {
+   {
     templeName: "Tokyo Japan",
     location: "Tokyo, Japan",
     dedicated: "1980, October, 27",
     area: 50000,
     imageUrl:
-      "https://churchofjesuschristtemples.org/tokyo-japan-temple/photographs/"
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x250/tokyo-temple-exterior-1300000-wallpaper.jpg"
   },
   {
     templeName: "Paris France",
@@ -71,7 +71,7 @@ const temples = [
     dedicated: "2017, May, 21",
     area: 12000,
     imageUrl:
-      "https://churchofjesuschristtemples.org/paris-france-temple/photographs/"
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/paris-france/400x250/paris-temple-exterior-1234567-wallpaper.jpg"
   },
   {
     templeName: "Rome Italy",
@@ -79,7 +79,7 @@ const temples = [
     dedicated: "2019, March, 17",
     area: 13500,
     imageUrl:
-      "https://churchofjesuschristtemples.org/rome-italy-temple/photographs/"
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-exterior-123456-wallpaper.jpg"
   }
 ];
 
