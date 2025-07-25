@@ -91,3 +91,27 @@ footer {
 footer p {
   margin: 0.25rem 0;
 }
+#templesContainer figure {
+  width: 400px;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#templesContainer img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#templesContainer figcaption {
+  padding: 10px;
+  font-size: 14px;
+  background: #f9f9f9;
+  color: #333;
+}
+
