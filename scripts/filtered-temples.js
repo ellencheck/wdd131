@@ -1,4 +1,3 @@
-// Массив храмов с исходными данными + 3 новых
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -56,14 +55,14 @@ const temples = [
     imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
-  // Новые 3 храма
+  // Новые 3 храма с твоими ссылками
   {
     templeName: "Tokyo Japan",
     location: "Tokyo, Japan",
     dedicated: "1980, October, 27",
     area: 50000,
     imageUrl:
-      "https://churchofjesuschrist.org/content/dam/church/temples/asia/tokyo-japan-temple-2.jpg"
+      "https://www.churchofjesuschrist.org/imgs/df6b96801c9f11ec99eeeeeeac1ea2207e7c517b/full/800%2C/0/default"
   },
   {
     templeName: "Paris France",
@@ -71,8 +70,8 @@ const temples = [
     dedicated: "2017, May, 21",
     area: 12000,
     imageUrl:
-      "https://churchofjesuschrist.org/content/dam/church/temples/europe/paris-france-temple-2.jpg"
-  }, // <-- ВАЖНО: запятая здесь, чтобы следующий объект был корректным
+      "https://www.churchofjesuschrist.org/imgs/5ec026c4efeaaa19a98e40f0f1b4c6069ae63517/full/320%2C/0/default"
+  },
   {
     templeName: "Rome Italy",
     location: "Rome, Italy",
