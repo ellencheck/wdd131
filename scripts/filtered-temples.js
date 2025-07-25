@@ -80,8 +80,6 @@ const temples = [
     area: 13500,
     imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-exterior-123456-wallpaper.jpg"
-  }  
-    
   }
 ];
 
@@ -174,3 +172,4 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 // Первоначальный показ всех храмов
 displayTemples(temples);
+
