@@ -9,17 +9,14 @@ header {
   background-color: #3b3b98;
   color: white;
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header-bar {
-  display: table;
-  width: 100%;
-}
-
-.header-bar h1,
-#menuBtn {
-  display: table-cell;
-  vertical-align: middle;
+.header-bar h1 {
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 #menuBtn {
@@ -27,7 +24,7 @@ header {
   background: none;
   border: none;
   color: white;
-  text-align: right;
+  cursor: pointer;
 }
 
 nav {
@@ -45,30 +42,24 @@ nav a {
   padding: 1rem;
   color: white;
   text-decoration: none;
-  cursor: pointer;
 }
 
+nav a:hover,
 nav a.hovered {
   background-color: #575fcf;
 }
 
 .grid-container {
-  display: inline-block;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding: 1rem;
-}
-
-.grid-container::after {
-  content: "";
-  display: table;
-  clear: both;
+  justify-content: center;
 }
 
 figure {
-  width: 100%;
-  max-width: 300px;
-  float: left;
-  margin: 0.5rem;
+  flex: 0 1 300px;
+  margin: 0;
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -99,3 +90,4 @@ footer {
 footer p {
   margin: 0.25rem 0;
 }
+
