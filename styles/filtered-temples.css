@@ -5,12 +5,14 @@ body {
   line-height: 1.5;
 }
 
+/* Общая стилизация header */
 header {
   background-color: #3b3b98;
   color: white;
   padding: 1rem;
 }
 
+/* Контейнер для заголовка и навигации */
 .header-bar {
   display: flex;
   align-items: center;
@@ -18,18 +20,22 @@ header {
   flex-wrap: wrap;
 }
 
+/* Заголовок */
 .header-bar h1 {
   margin: 0;
 }
 
+/* Гамбургер */
 #menuBtn {
   font-size: 1.5rem;
   background: none;
   border: none;
   color: white;
   display: block;
+  cursor: pointer;
 }
 
+/* Навигация */
 nav {
   display: none;
   flex-direction: column;
@@ -45,16 +51,16 @@ nav a {
   padding: 1rem;
   color: white;
   text-decoration: none;
-  cursor: pointer;
 }
 
 nav a:hover {
   background-color: #575fcf;
 }
 
+/* Сетка изображений */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
   padding: 1rem;
 }
@@ -62,10 +68,6 @@ nav a:hover {
 figure {
   margin: 0;
   text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 0.5rem;
-  background-color: #f9f9f9;
 }
 
 figure img {
@@ -74,10 +76,28 @@ figure img {
   border-radius: 8px;
 }
 
-figcaption {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  font-size: 1rem;
+main h1 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+:root {
+  --primary-color: #3b3b98;
+  --nav-hover-color: #575fcf;
+  --font-main: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+}
+
+header {
+  background-color: var(--primary-color);
+}
+
+nav a:hover {
+  background-color: var(--nav-hover-color);
 }
 
 footer {
@@ -90,4 +110,21 @@ footer {
 
 footer p {
   margin: 0.25rem 0;
+}
+
+/* Навигация: на больших экранах показываем меню */
+@media (min-width: 600px) {
+  #menuBtn {
+    display: none;
+  }
+  nav {
+    display: flex !important;
+    flex-direction: row;
+    background-color: transparent;
+    width: auto;
+    margin-top: 0;
+  }
+  nav a {
+    padding: 0 1rem;
+  }
 }
