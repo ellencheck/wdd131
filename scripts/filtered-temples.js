@@ -1,3 +1,4 @@
+// Массив храмов с исходными данными + добавим 3 новых для задания
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -55,14 +56,14 @@ const temples = [
     imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
-  // Новые 3 храма с твоими ссылками
+  // Новые с актуальными ссылками
   {
     templeName: "Tokyo Japan",
     location: "Tokyo, Japan",
     dedicated: "1980, October, 27",
     area: 50000,
     imageUrl:
-      "https://www.churchofjesuschrist.org/imgs/df6b96801c9f11ec99eeeeeeac1ea2207e7c517b/full/800%2C/0/default"
+      "https://www.churchofjesuschrist.org/imgs/df6b96801c9f11ec99eeeeeeac1ea2207e7c517b/full/800,0/default"
   },
   {
     templeName: "Paris France",
@@ -70,7 +71,7 @@ const temples = [
     dedicated: "2017, May, 21",
     area: 12000,
     imageUrl:
-      "https://www.churchofjesuschrist.org/imgs/5ec026c4efeaaa19a98e40f0f1b4c6069ae63517/full/320%2C/0/default"
+      "https://www.churchofjesuschrist.org/imgs/5ec026c4efeaaa19a98e40f0f1b4c6069ae63517/full/320,0/default"
   },
   {
     templeName: "Rome Italy",
@@ -78,7 +79,7 @@ const temples = [
     dedicated: "2019, March, 17",
     area: 13500,
     imageUrl:
-      "https://www.churchofjesuschrist.org/imgs/08d5a9e90a0c8347a61d17335775c5e118b33a9a/full/500%2C/0/default"
+      "https://www.churchofjesuschrist.org/imgs/08d5a9e90a0c8347a61d17335775c5e118b33a9a/full/500,0/default"
   }
 ];
 
@@ -94,7 +95,7 @@ function createTempleCard(temple) {
   const img = document.createElement("img");
   img.src = temple.imageUrl;
   img.alt = temple.templeName;
-  img.loading = "lazy"; // ленивое загрузка
+  img.loading = "lazy"; // lazy loading
 
   // Если картинка не загрузилась, заменяем на заглушку
   img.onerror = () => {
@@ -129,10 +130,16 @@ function filterTemples(criteria) {
 
   switch(criteria) {
     case "old":
-      filtered = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
+      filtered = temples.filter(t => {
+        const year = new Date(t.dedicated).getFullYear();
+        return year < 1900;
+      });
       break;
     case "new":
-      filtered = temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
+      filtered = temples.filter(t => {
+        const year = new Date(t.dedicated).getFullYear();
+        return year > 2000;
+      });
       break;
     case "large":
       filtered = temples.filter(t => t.area > 90000);
@@ -170,4 +177,3 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 // Первоначальный показ всех храмов
 displayTemples(temples);
-
