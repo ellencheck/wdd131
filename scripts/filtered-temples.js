@@ -1,111 +1,174 @@
-// JavaScript for filtered-temples
+// Массив храмов с исходными данными + добавим 3 новых для задания
 const temples = [
   {
-    templeName: "Rome Italy Temple",
-    location: "Rome, Italy",
-    dedicated: "2019, March, 10",
-    area: 41010,
-    imageUrl: "images/rome-italy-temple-lds-1935293-wallpaper.jpg"
+    templeName: "Aba Nigeria",
+    location: "Aba, Nigeria",
+    dedicated: "2005, August, 7",
+    area: 11500,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
   },
   {
-    templeName: "Paris France Temple",
+    templeName: "Manti Utah",
+    location: "Manti, Utah, United States",
+    dedicated: "1888, May, 21",
+    area: 74792,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
+  },
+  {
+    templeName: "Payson Utah",
+    location: "Payson, Utah, United States",
+    dedicated: "2015, June, 7",
+    area: 96630,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
+  },
+  {
+    templeName: "Yigo Guam",
+    location: "Yigo, Guam",
+    dedicated: "2020, May, 2",
+    area: 6861,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
+  },
+  {
+    templeName: "Washington D.C.",
+    location: "Kensington, Maryland, United States",
+    dedicated: "1974, November, 19",
+    area: 156558,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
+  },
+  {
+    templeName: "Lima Perú",
+    location: "Lima, Perú",
+    dedicated: "1986, January, 10",
+    area: 9600,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
+  },
+  {
+    templeName: "Mexico City Mexico",
+    location: "Mexico City, Mexico",
+    dedicated: "1983, December, 2",
+    area: 116642,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
+  },
+  // Добавим 3 новых
+  {
+    templeName: "Tokyo Japan",
+    location: "Tokyo, Japan",
+    dedicated: "1980, October, 27",
+    area: 50000,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x250/tokyo-temple-exterior-1300000-wallpaper.jpg"
+  },
+  {
+    templeName: "Paris France",
     location: "Le Chesnay, France",
     dedicated: "2017, May, 21",
-    area: 44175,
-    imageUrl: "images/paris-france-temple-lds-1792010-wallpaper.jpg"
+    area: 12000,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/paris-france/400x250/paris-temple-exterior-1234567-wallpaper.jpg"
   },
   {
-    templeName: "Frankfurt Germany Temple",
-    location: "Frankfurt, Germany",
-    dedicated: "1987, August, 28",
-    area: 34606,
-    imageUrl: "images/frankfurt-germany-temple-lds-774803-wallpaper.jpg"
-  },
-  {
-    templeName: "Bern Switzerland Temple",
-    location: "Zollikofen, Switzerland",
-    dedicated: "1955, September, 11",
-    area: 44985,
-    imageUrl: "images/bern-switzerland-temple-lds-758562-wallpaper.jpg"
+    templeName: "Sydney Australia",
+    location: "Sydney, Australia",
+    dedicated: "1984, September, 15",
+    area: 15000,
+    imageUrl:
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/sydney-australia/400x250/sydney-temple-exterior-7654321-wallpaper.jpg"
   }
 ];
 
-const displayTemples = (templesArray) => {
-  const cards = document.querySelector("#temples");
-  cards.innerHTML = "";
+// Получаем DOM элементы
+const templesContainer = document.getElementById("templesContainer");
+const navMenu = document.getElementById("navMenu");
+const menuBtn = document.getElementById("menuBtn");
 
-  templesArray.forEach((temple) => {
-    const card = document.createElement("section");
-    const name = document.createElement("h3");
-    name.textContent = temple.templeName;
+// Функция создания карточки храма
+function createTempleCard(temple) {
+  const figure = document.createElement("figure");
 
-    const location = document.createElement("p");
-    location.textContent = `Location: ${temple.location}`;
+  const img = document.createElement("img");
+  img.src = temple.imageUrl;
+  img.alt = temple.templeName;
+  img.loading = "lazy"; // lazy loading
 
-    const dedication = document.createElement("p");
-    dedication.textContent = `Dedicated: ${temple.dedicated}`;
+  const caption = document.createElement("figcaption");
+  caption.innerHTML = `
+    <strong>${temple.templeName}</strong><br>
+    Location: ${temple.location}<br>
+    Dedicated: ${temple.dedicated}<br>
+    Area: ${temple.area.toLocaleString()} sq ft
+  `;
 
-    const area = document.createElement("p");
-    area.textContent = `Size: ${temple.area} sq ft`;
+  figure.appendChild(img);
+  figure.appendChild(caption);
 
-    const image = document.createElement("img");
-    image.setAttribute("src", temple.imageUrl);
-    image.setAttribute("alt", `Exterior image of ${temple.templeName}`);
-
-    card.appendChild(name);
-    card.appendChild(location);
-    card.appendChild(dedication);
-    card.appendChild(area);
-    card.appendChild(image);
-
-    cards.appendChild(card);
-  });
-};
-
-// Sort temples by name initially
-const sortByName = temples.sort((a, b) =>
-  a.templeName > b.templeName ? 1 : -1
-);
-displayTemples(sortByName);
-
-// Filtering
-function filterTemples(temples) {
-  displayTemples(
-    temples.filter((temple) => {
-      const dedicatedYear = parseInt(temple.dedicated.split(",")[0]);
-      const area = temple.area;
-      switch (document.querySelector("#filtered").value) {
-        case "old":
-          return dedicatedYear < 1900;
-        case "new":
-          return dedicatedYear > 2000;
-        case "large":
-          return area > 90000;
-        case "small":
-          return area < 10000;
-        default:
-          return true;
-      }
-    })
-  );
+  return figure;
 }
 
-document.querySelector("#filtered").addEventListener("change", () => {
-  filterTemples(temples);
+// Функция отрисовки списка храмов
+function displayTemples(templesArray) {
+  templesContainer.innerHTML = "";
+  templesArray.forEach(temple => {
+    templesContainer.appendChild(createTempleCard(temple));
+  });
+}
+
+// Фильтрация по пунктам меню
+function filterTemples(criteria) {
+  let filtered = [];
+
+  switch(criteria) {
+    case "old":
+      filtered = temples.filter(t => {
+        const year = new Date(t.dedicated).getFullYear();
+        return year < 1900;
+      });
+      break;
+    case "new":
+      filtered = temples.filter(t => {
+        const year = new Date(t.dedicated).getFullYear();
+        return year > 2000;
+      });
+      break;
+    case "large":
+      filtered = temples.filter(t => t.area > 90000);
+      break;
+    case "small":
+      filtered = temples.filter(t => t.area < 10000);
+      break;
+    default:
+      filtered = temples;
+  }
+
+  displayTemples(filtered);
+}
+
+// Инициализация меню гамбургера
+menuBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+  menuBtn.textContent = navMenu.classList.contains("open") ? "✖" : "☰";
 });
 
-// Hamburger
-const hamButton = document.querySelector(".menu");
-const navigation = document.querySelector(".navigation");
-
-hamButton.addEventListener("click", () => {
-  navigation.classList.toggle("open");
-  hamButton.classList.toggle("open");
+// Обработка кликов по навигации
+navMenu.addEventListener("click", e => {
+  if (e.target.tagName === "A") {
+    e.preventDefault();
+    const filter = e.target.dataset.filter;
+    filterTemples(filter);
+    navMenu.classList.remove("open");
+    menuBtn.textContent = "☰";
+  }
 });
 
-// Footer
-const yearSpan = document.querySelector("#year");
-yearSpan.textContent = new Date().getFullYear();
+// Установка динамического года и даты модификации
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = document.lastModified;
 
-const lastModifiedSpan = document.querySelector("#lastModified");
-lastModifiedSpan.textContent = document.lastModified;
+// Первоначальный показ всех храмов
+displayTemples(temples);
