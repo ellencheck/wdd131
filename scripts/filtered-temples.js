@@ -1,4 +1,3 @@
-// Массив храмов с исходными данными + добавим 3 новых для задания
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -63,26 +62,24 @@ const temples = [
     dedicated: "1980, October, 27",
     area: 50000,
     imageUrl:
-      "https://churchofjesuschrist.org/content/dam/church/temples/asia/tokyo-japan-temple-2.jpg"
+      "https://www.churchofjesuschrist.org/imgs/7f7a6a4f6c3f4f1bb787d765e390fa07f3e78499/full/800%2C0/default"
   },
   {
-  templeName: "Paris France",
-  location: "Le Chesnay, France",
-  dedicated: "2017, May, 21",
-  area: 12000,
-  imageUrl: "https://churchofjesuschrist.org/content/dam/church/temples/europe/paris-france-temple-2.jpg"
-}
- {
-  templeName: "Rome Italy",
-  location: "Rome, Italy",
-  dedicated: "2019, March, 17",
-  area: 13500,
-  imageUrl: "https://www.churchofjesuschrist.org/imgs/08d5a9e90a0c8347a61d17335775c5e118b33a9a/full/500%2C/0/default"
-}
-
+    templeName: "Paris France",
+    location: "Le Chesnay, France",
+    dedicated: "2017, May, 21",
+    area: 12000,
+    imageUrl: "https://www.churchofjesuschrist.org/imgs/df6b96801c9f11ec99eeeeeeac1ea2207e7c517b/full/800%2C0/default"
+  },
+  {
+    templeName: "Rome Italy",
+    location: "Rome, Italy",
+    dedicated: "2019, March, 17",
+    area: 13500,
+    imageUrl: "https://www.churchofjesuschrist.org/imgs/08d5a9e90a0c8347a61d17335775c5e118b33a9a/full/500%2C0/default"
+  }
 ];
-
-// Получаем DOM элементы
+/ Получаем DOM элементы
 const templesContainer = document.getElementById("templesContainer");
 const navMenu = document.getElementById("navMenu");
 const menuBtn = document.getElementById("menuBtn");
@@ -95,11 +92,6 @@ function createTempleCard(temple) {
   img.src = temple.imageUrl;
   img.alt = temple.templeName;
   img.loading = "lazy"; // lazy loading
-
-  // Если картинка не загрузилась, заменяем на заглушку
-  img.onerror = () => {
-    img.src = "https://via.placeholder.com/400x250?text=Image+not+available";
-  };
 
   const caption = document.createElement("figcaption");
   caption.innerHTML = `
