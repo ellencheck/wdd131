@@ -79,7 +79,7 @@ const temples = [
     dedicated: "2019, March, 17",
     area: 13500,
     imageUrl:
-      "https://churchofjesuschristtemples.org/wp-content/uploads/sites/54/2019/05/rome-italy-temple-exterior-400x250.jpg"
+      "https://www.churchofjesuschrist.org/imgs/4e47429c6ce95afa09578b5a4f791b4a09160a6d/full/3840%2C/0/default"
   }
 ];
 
