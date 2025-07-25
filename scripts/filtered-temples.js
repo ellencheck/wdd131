@@ -63,7 +63,7 @@ const temples = [
     dedicated: "1980, October, 27",
     area: 50000,
     imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x250/tokyo-temple-exterior-1300000-wallpaper.jpg"
+      "https://churchofjesuschristtemples.org/wp-content/uploads/sites/54/2020/10/tokyo_japan_temple_exterior_02-400x250.jpg"
   },
   {
     templeName: "Paris France",
@@ -71,17 +71,127 @@ const temples = [
     dedicated: "2017, May, 21",
     area: 12000,
     imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/paris-france/400x250/paris-temple-exterior-1234567-wallpaper.jpg"
+      "https://churchofjesuschristtemples.org/wp-content/uploads/sites/54/2019/07/paris-france-temple-exterior-400x250.jpg"
   },
   {
-  templeName: "Rome Italy",
-  location: "Rome, Italy",
-  dedicated: "2019, March, 17",
-  area: 13500,
-  imageUrl: "images/rome-temple.jpg"
+    templeName: "Rome Italy",
+    location: "Rome, Italy",
+    dedicated: "2019, March, 17",
+    area: 13500,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/wp-content/uploads/sites/54/2019/05/rome-italy-temple-exterior-400x250.jpg"
+  }
+];
+
+// Остальной код без изменений
+// Получаем DOM элементы
+const templesContainer = document.getElementById("templesContainer");
+const navMenu = document.getElementById("navMenu");
+const menuBtn = document.getElementById("menuBtn");
+
+// Функция создания карточки храма
+function createTempleCard(temple) {
+  const figure = document.createElement("figure");
+
+  const img = document.createElement("img");
+  img.src = temple.imageUrl;
+  img.alt = temple.templeName;
+  img.loading = "lazy"; // lazy loading
+
+  const caption = document.createElement("figcaption");
+  caption.innerHTML = `
+    <strong>${temple.templeName}</strong><br>
+    Location: ${temple.location}<br>
+    Dedicated: ${temple.dedicated}<br>
+    Area: ${temple.area.toLocaleString()} sq ft
+  `;
+
+  figure.appendChild(img);
+  figure.appendChild(caption);
+
+  return figure;
 }
 
-];
+// Функция отрисовки списка храмов
+function displayTemples(templesArray) {
+  templesContainer.innerHTML = "";
+  templesArray.forEach(temple => {
+    templesContainer.appendChild(createTempleCard(temple));
+  });
+}
+
+// Фильтрация по пунктам меню
+function filterTemples(criteria) {
+  let filtered = [];
+
+  switch(criteria) {
+    case "old":
+      filtered = temples.filter(t => {
+        const year = new Date(t.dedicated).getFullYear();
+        return year < 1900;
+      });
+      break;
+    case "new":
+      filtered = temples.filter(t => {
+        const year = new Date(t.dedicated).getFullYear();
+        return year > 2000;
+      });
+      break;
+    case "large":
+      filtered = temples.filter(t => t.area > 90000);
+      break;
+    case "small":
+      filtered = temples.filter(t => t.area < 10000);
+      break;
+    default:
+      filtered = temples;
+  }
+
+  displayTemples(filtered);
+}
+
+// Инициализация меню гамбургера
+menuBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+  menuBtn.textContent = navMenu.classList.contains("open") ? "✖" : "☰";
+});
+
+// Обработка кликов по навигации
+navMenu.addEventListener("click", e => {
+  if (e.target.tagName === "A") {
+    e.preventDefault();
+    const filter = e.target.dataset.filter;
+    filterTemples(filter);
+    navMenu.classList.remove("open");
+    menuBtn.textContent = "☰";
+  }
+});
+
+// Установка динамического года и даты модификации
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = document.lastModified;
+
+// Первоначальный показ всех храмов
+displayTemples(temples);
+Теперь для трёх храмов используются рабочие URL с сайта churchofjesuschristtemples.org — картинки должны отобразиться корректно.
+
+Если хочешь, могу помочь проверить на странице или ещё что-то поправить!
+
+
+
+
+
+
+
+
+¿Esta conversación te resultó útil hasta ahora?
+
+
+
+
+Preguntar a ChatGPT
+
+
 
 // Получаем DOM элементы
 const templesContainer = document.getElementById("templesContainer");
