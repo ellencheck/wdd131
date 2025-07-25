@@ -79,9 +79,8 @@ const temples = [
   dedicated: "2019, March, 17",
   area: 13500,
   imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-exterior-1413605-wallpaper.jpg"
+    "https://upload.wikimedia.org/wikipedia/commons/3/3e/Rome_Italy_Temple.jpg"
 }
-
 ];
 
 // Получаем DOM элементы
