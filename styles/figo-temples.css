@@ -12,14 +12,14 @@ header {
 }
 
 .header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: table;
+  width: 100%;
 }
 
-.header-bar h1 {
-  margin: 0;
+.header-bar h1,
+#menuBtn {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #menuBtn {
@@ -27,40 +27,48 @@ header {
   background: none;
   border: none;
   color: white;
-  display: block;
+  text-align: right;
 }
 
 nav {
   display: none;
-  flex-direction: column;
   background-color: #2c2c54;
   width: 100%;
 }
 
 nav.open {
-  display: flex;
+  display: block;
 }
 
 nav a {
+  display: block;
   padding: 1rem;
   color: white;
   text-decoration: none;
   cursor: pointer;
 }
 
-nav a:hover {
+nav a.hovered {
   background-color: #575fcf;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
-  gap: 1rem;
+  display: inline-block;
+  width: 100%;
   padding: 1rem;
 }
 
+.grid-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 figure {
-  margin: 0;
+  width: 100%;
+  max-width: 300px;
+  float: left;
+  margin: 0.5rem;
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
