@@ -57,23 +57,30 @@ const temples = [
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
   // Добавим 3 новых
- {
-  templeName: "Paris France",
-  location: "Le Chesnay, France",
-  dedicated: "2017, May, 21",
-  area: 12000,
-  imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/paris-france/400x250/paris-temple-exterior-1426417-wallpaper.jpg"
-},
 {
-  templeName: "Rome Italy",
-  location: "Rome, Italy",
-  dedicated: "2019, March, 17",
-  area: 13500,
-  imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-exterior-1413605-wallpaper.jpg"
-}
-
+    templeName: "Tokyo Japan",
+    location: "Tokyo, Japan",
+    dedicated: "1980, October, 27",
+    area: 50000,
+    imageUrl:
+      "https://www.churchofjesuschrist.org/media/image/tokyo-japan-temple-lds-4f1313d?lang=eng"
+  },
+  {
+    templeName: "Paris France",
+    location: "Le Chesnay, France",
+    dedicated: "2017, May, 21",
+    area: 12000,
+    imageUrl:
+      "https://www.churchofjesuschrist.org/media/collection/paris-france-temple-images?lang=eng"
+  },
+  {
+    templeName: "Rome Italy",
+    location: "Rome, Italy",
+    dedicated: "2019, March, 17",
+    area: 13500,
+    imageUrl:
+      "https://www.churchofjesuschrist.org/media/collection/rome-italy-temple-images?lang=eng"
+  }
 ];
 
 // Получаем DOM элементы
