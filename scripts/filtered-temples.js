@@ -58,32 +58,31 @@ const temples = [
   },
   // Добавим 3 новых
   {
-  templeName: "Tokyo Japan",
-  location: "Tokyo, Japan",
-  dedicated: "1980, October, 27",
-  area: 50000,
-  imageUrl:
-    "https://churchofjesuschrist.org/content/dam/church/temples/asia/tokyo-japan-temple-2.jpg"
-},
-{
-  templeName: "Paris France",
-  location: "Le Chesnay, France",
-  dedicated: "2017, May, 21",
-  area: 12000,
-  imageUrl:
-    "https://churchofjesuschrist.org/content/dam/church/temples/europe/paris-france-temple-2.jpg"
-},
-{
-  templeName: "Rome Italy",
-  location: "Rome, Italy",
-  dedicated: "2019, March, 17",
-  area: 13500,
-  imageUrl:
-    "https://churchofjesuschrist.org/content/dam/church/temples/europe/rome-italy-temple-2.jpg"
-}
+    templeName: "Tokyo Japan",
+    location: "Tokyo, Japan",
+    dedicated: "1980, October, 27",
+    area: 50000,
+    imageUrl:
+      "https://churchofjesuschrist.org/content/dam/church/temples/asia/tokyo-japan-temple-2.jpg"
+  },
+  {
+    templeName: "Paris France",
+    location: "Le Chesnay, France",
+    dedicated: "2017, May, 21",
+    area: 12000,
+    imageUrl:
+      "https://churchofjesuschrist.org/content/dam/church/temples/europe/paris-france-temple-2.jpg"
+  },
+  {
+    templeName: "Rome Italy",
+    location: "Rome, Italy",
+    dedicated: "2019, March, 17",
+    area: 13500,
+    imageUrl:
+      "https://churchofjesuschrist.org/content/dam/church/temples/europe/rome-italy-temple-2.jpg"
+  }
 ];
 
-// Остальной код без изменений
 // Получаем DOM элементы
 const templesContainer = document.getElementById("templesContainer");
 const navMenu = document.getElementById("navMenu");
@@ -98,116 +97,7 @@ function createTempleCard(temple) {
   img.alt = temple.templeName;
   img.loading = "lazy"; // lazy loading
 
-  const caption = document.createElement("figcaption");
-  caption.innerHTML = `
-    <strong>${temple.templeName}</strong><br>
-    Location: ${temple.location}<br>
-    Dedicated: ${temple.dedicated}<br>
-    Area: ${temple.area.toLocaleString()} sq ft
-  `;
-
-  figure.appendChild(img);
-  figure.appendChild(caption);
-
-  return figure;
-}
-
-// Функция отрисовки списка храмов
-function displayTemples(templesArray) {
-  templesContainer.innerHTML = "";
-  templesArray.forEach(temple => {
-    templesContainer.appendChild(createTempleCard(temple));
-  });
-}
-
-// Фильтрация по пунктам меню
-function filterTemples(criteria) {
-  let filtered = [];
-
-  switch(criteria) {
-    case "old":
-      filtered = temples.filter(t => {
-        const year = new Date(t.dedicated).getFullYear();
-        return year < 1900;
-      });
-      break;
-    case "new":
-      filtered = temples.filter(t => {
-        const year = new Date(t.dedicated).getFullYear();
-        return year > 2000;
-      });
-      break;
-    case "large":
-      filtered = temples.filter(t => t.area > 90000);
-      break;
-    case "small":
-      filtered = temples.filter(t => t.area < 10000);
-      break;
-    default:
-      filtered = temples;
-  }
-
-  displayTemples(filtered);
-}
-
-// Инициализация меню гамбургера
-menuBtn.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-  menuBtn.textContent = navMenu.classList.contains("open") ? "✖" : "☰";
-});
-
-// Обработка кликов по навигации
-navMenu.addEventListener("click", e => {
-  if (e.target.tagName === "A") {
-    e.preventDefault();
-    const filter = e.target.dataset.filter;
-    filterTemples(filter);
-    navMenu.classList.remove("open");
-    menuBtn.textContent = "☰";
-  }
-});
-
-// Установка динамического года и даты модификации
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
-
-// Первоначальный показ всех храмов
-displayTemples(temples);
-Теперь для трёх храмов используются рабочие URL с сайта churchofjesuschristtemples.org — картинки должны отобразиться корректно.
-
-Если хочешь, могу помочь проверить на странице или ещё что-то поправить!
-
-
-
-
-
-
-
-
-¿Esta conversación te resultó útil hasta ahora?
-
-
-
-
-Preguntar a ChatGPT
-
-
-
-// Получаем DOM элементы
-const templesContainer = document.getElementById("templesContainer");
-const navMenu = document.getElementById("navMenu");
-const menuBtn = document.getElementById("menuBtn");
-
-// Функция создания карточки храма
-function createTempleCard(temple) {
-  const figure = document.createElement("figure");
-
-  const img = document.createElement("img");
-  img.src = temple.imageUrl;
-  img.alt = temple.templeName;
-  img.loading = "lazy"; // lazy loading
-
-  // Подмена картинки на заглушку, если не загрузилась
+  // Если картинка не загрузилась, заменяем на заглушку
   img.onerror = () => {
     img.src = "https://via.placeholder.com/400x250?text=Image+not+available";
   };
