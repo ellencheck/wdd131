@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  /* Используем Roboto как основной шрифт, Arial как запасной */
+  font-family: 'Roboto', Arial, sans-serif;
   padding: 1rem;
   max-width: 600px;
   margin: auto;
