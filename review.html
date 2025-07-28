@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Review Confirmation</title>
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+  <h1>Thank you for your review!</h1>
+  <p>Your review has been submitted.</p>
+  <p>Total reviews submitted: <span id="reviewCount"></span></p>
+
+  <footer>
+    <p>&copy; 2025 | WDD 131 | Product Review</p>
+  </footer>
+
+  <script>
+    const countKey = "reviewCount";
+    let count = Number(localStorage.getItem(countKey)) || 0;
+    count++;
+    localStorage.setItem(countKey, count);
+    document.getElementById("reviewCount").textContent = count;
+  </script>
+</body>
+</html>
