@@ -49,4 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+<script>
+  const toggleButton = document.querySelector(".menu-toggle");
+  const header = document.querySelector("header");
+
+  toggleButton.addEventListener("click", () => {
+    header.classList.toggle("menu-open");
+  });
+</script>
 
