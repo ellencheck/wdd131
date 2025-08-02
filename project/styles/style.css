@@ -687,33 +687,51 @@ footer p {
 }
 /* Адаптивный стиль для мобильных устройств */
 @media (max-width: 768px) {
-  nav ul {
+  .site-header {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: 1rem;
   }
 
-  .tour-section {
+  .right-nav ul {
     flex-direction: column;
-    padding: 1rem;
-  }
-
-  .tour-card {
     width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  footer {
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  footer .contact-info {
-    flex-direction: column;
-    align-items: center;
     gap: 0.5rem;
+    padding-left: 0;
   }
 
-  .hero h1 {
+  .features {
+    flex-direction: column;
+  }
+
+  .feature {
+    flex: 1 1 100%;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .gallery img {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h2 {
     font-size: 1.5rem;
+  }
+
+  .cta .btn {
+    width: 100%;
   }
 }
