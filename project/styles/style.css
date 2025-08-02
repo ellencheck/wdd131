@@ -686,67 +686,62 @@ footer p {
   margin: 0;
 }
 /* Адаптивный стиль для мобильных устройств */
-@media (max-width: 768px) {
-  /* Хедер */
+@media screen and (max-width: 768px) {
   header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #004466;
+    color: white;
     padding: 1rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
   }
 
-  header img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 1rem;
+  header h1 {
+    font-size: 1.2rem;
+    margin: 0;
   }
 
   nav {
-    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #004466;
+    display: none;
     flex-direction: column;
-    gap: 0.5rem;
+    text-align: center;
+    z-index: 1000;
   }
 
   nav a {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     text-decoration: none;
-    color: #fff;
-    background-color: #333;
-    border-radius: 5px;
+    color: white;
+    border-top: 1px solid rgba(255,255,255,0.2);
   }
 
-  /* Футер */
-  footer {
+  .menu-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+  }
+
+  .menu-open nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #222;
-    color: #eee;
-    padding: 2rem 1rem;
   }
 
-  footer h3 {
-    margin-bottom: 1rem;
+  footer {
+    background-color: #004466;
+    color: white;
+    padding: 1.2rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
   }
 
   footer p {
-    margin: 0.5rem 0;
-    font-size: 0.95rem;
-  }
-
-  footer .footer-contact {
-    margin-top: 1rem;
-  }
-
-  footer .footer-contact a {
-    color: #88c0d0;
-    text-decoration: none;
-  }
-
-  footer .footer-contact a:hover {
-    text-decoration: underline;
+    margin: 0.3rem 0;
   }
 }
