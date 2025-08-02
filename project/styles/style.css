@@ -687,51 +687,66 @@ footer p {
 }
 /* Адаптивный стиль для мобильных устройств */
 @media (max-width: 768px) {
-  .site-header {
+  /* Хедер */
+  header {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
   }
 
-  .right-nav ul {
+  header img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  nav {
+    display: flex;
     flex-direction: column;
-    width: 100%;
     gap: 0.5rem;
-    padding-left: 0;
   }
 
-  .features {
+  nav a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+  }
+
+  /* Футер */
+  footer {
+    display: flex;
     flex-direction: column;
-  }
-
-  .feature {
-    flex: 1 1 100%;
-  }
-
-  .about {
-    flex-direction: column;
-  }
-
-  .gallery {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .gallery img {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero {
+    align-items: center;
+    text-align: center;
+    background-color: #222;
+    color: #eee;
     padding: 2rem 1rem;
   }
 
-  .hero h2 {
-    font-size: 1.5rem;
+  footer h3 {
+    margin-bottom: 1rem;
   }
 
-  .cta .btn {
-    width: 100%;
+  footer p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  footer .footer-contact {
+    margin-top: 1rem;
+  }
+
+  footer .footer-contact a {
+    color: #88c0d0;
+    text-decoration: none;
+  }
+
+  footer .footer-contact a:hover {
+    text-decoration: underline;
   }
 }
