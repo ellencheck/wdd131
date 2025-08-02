@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tours - Discover Chile</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="left-block">
+      <img src="images/logo.webp" alt="Logo">
+      <h1>Discover Chile</h1>
+    </div>
+    <nav class="right-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tours.html" class="active">Tours</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Our Tours &amp; Prices</h2>
+    <p>Handpicked experiences to show you the very best of Chile.</p>
+  </section>
+
+  <section class="tours features">
+
+    <h2 class="tour-category">🌊 Sea Adventures</h2>
+
+    <div class="feature">
+      <img src="images/kayak_marble.webp" alt="Kayaking in Marble Caves" />
+      <h3>Marble Caves Kayak Tour</h3>
+      <p>2‑hour kayak in turquoise waters near Puerto Río Tranquilo. <strong>$180 per person</strong>.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/kayak_exp.webp" alt="Multi-day kayak" />
+      <h3>Multi‑Day Kayak Expedition in Aysén</h3>
+      <p>5 nights camping + paddling in remote lagoons. <strong>$1750–$3200 per person</strong>.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/sailing_chiloe.webp" alt="Chiloé sailing" />
+      <h3>Sailing the Chiloé Archipelago</h3>
+      <p>2‑day tour on traditional sailboat with stops in fishing villages. <strong>$980 per person</strong>.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/sailing_fjords.webp" alt="Sailing expedition" />
+      <h3>3‑Day Patagonia Sailing Cruise</h3>
+      <p>Onboard a wooden schooner through fjords with glacier hikes. <strong>$2100 per person</strong>.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/dive_pacific.webp" alt="Diving in Pacific Ocean" />
+      <h3>Patagonia Dive Adventure</h3>
+      <p>Scuba dive near kelp forests & marine life. Equipment included. <strong>$380 per person</strong>.</p>
+    </div>
+
+    <h2 class="tour-category">☁️ Sky Adventures</h2>
+
+    <div class="feature">
+      <img src="images/flight_andes.webp" alt="Andes flight" />
+      <h3>Scenic Andes Flight</h3>
+      <p>1‑hour airplane flight over snow-capped Andes. Includes wine valley flyover. <strong>$290 per person</strong>.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/flight_lake.webp" alt="Flight over lakes" />
+      <h3>Lake District Flyover</h3>
+      <p>Fly above volcanoes, lakes and national parks. 40 minutes. <strong>$240 per person</strong>.</p>
+    </div>
+
+    <h2 class="tour-category">⛺ Camping & Trekking</h2>
+
+    <div class="feature">
+      <img src="images/camping_torres.webp" alt="W Circuit Camping" />
+      <h3>W Trek with Camping – Torres del Paine</h3>
+      <p>5‑day guided hiking tour with tent lodging. Meals and gear included. <strong>$2650 per person</strong>.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/desert_camp.webp" alt="Atacama camping" />
+      <h3>Atacama Desert Stargazing Camp</h3>
+      <p>1‑night camping with telescopes, dinner, and guide. <strong>$220 per person</strong>.</p>
+    </div>
+
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Explore Chile?</h2>
+    <button onclick="bookNow()" class="btn">Book Now</button>
+  </section>
+
+  <section id="booking-form-section" style="display:none; padding:20px; border:1px solid #ccc; margin: 20px;">
+    <h2>Book Your Tour</h2>
+    <form id="booking-form">
+      <label for="tour-select">Choose your tour:</label><br />
+      <select id="tour-select" name="tour" required>
+        <optgroup label="🌊 Sea Adventures">
+          <option value="Marble Caves Kayak Tour">Marble Caves Kayak Tour</option>
+          <option value="Multi-Day Kayak Expedition in Aysén">Multi-Day Kayak Expedition in Aysén</option>
+          <option value="Sailing the Chiloé Archipelago">Sailing the Chiloé Archipelago</option>
+          <option value="3-Day Patagonia Sailing Cruise">3-Day Patagonia Sailing Cruise</option>
+          <option value="Patagonia Dive Adventure">Patagonia Dive Adventure</option>
+        </optgroup>
+        <optgroup label="☁️ Sky Adventures">
+          <option value="Scenic Andes Flight">Scenic Andes Flight</option>
+          <option value="Lake District Flyover">Lake District Flyover</option>
+        </optgroup>
+        <optgroup label="⛺ Camping & Trekking">
+          <option value="W Trek with Camping – Torres del Paine">W Trek with Camping – Torres del Paine</option>
+          <option value="Atacama Desert Stargazing Camp">Atacama Desert Stargazing Camp</option>
+        </optgroup>
+      </select><br /><br />
+
+      <label for="people-count">Number of people:</label><br />
+      <input type="number" id="people-count" name="people" min="1" max="20" value="1" required /><br /><br />
+
+      <label for="phone">Phone number:</label><br />
+      <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8901" required /><br /><br />
+
+      <label for="email">Email address:</label><br />
+      <input type="email" id="email" name="email" placeholder="yourname@example.com" required /><br /><br />
+
+      <button type="submit" class="btn">Submit Booking</button>
+      <button type="button" id="cancel-booking" class="btn" style="background:#ccc; color:#000; margin-left:10px;">Cancel</button>
+    </form>
+  </section>
+
+ <footer>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="tours.html">Tours</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="socialmedia">
+      <a href="https://facebook.com"><img src="images/facebook.svg" alt="Facebook"></a>
+      <a href="https://twitter.com"><img src="images/twitter.svg" alt="Twitter"></a>
+      <a href="https://instagram.com"><img src="images/instagram.svg" alt="Instagram"></a>
+  <p>© 2025 Discover Chile</p>
+</footer>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>
