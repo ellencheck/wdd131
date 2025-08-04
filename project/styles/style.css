@@ -685,54 +685,44 @@ footer p {
   font-size: 14px;
   margin: 0;
 }
-/* Адаптивный стиль для мобильных устройств */
-/* Скрываем кнопку гамбургер на десктопе */
+/* Скрываем кнопку гамбургер и меню на десктопе */
 .menu-toggle {
   display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1001;
 }
 
-/* Мобильные стили */
+/* На мобильных показываем гамбургер и скрываем меню */
 @media screen and (max-width: 768px) {
   header.site-header {
     position: relative;
-    background-color: #004466; /* можно подкорректировать */
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
-  /* Показываем кнопку гамбургер на мобильных */
   .menu-toggle {
     display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
   }
 
-  /* Меню по умолчанию скрыто */
   nav.right-nav {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
     background-color: #004466;
-    width: 100%;
-    max-width: 300px;
-    flex-direction: column;
+    width: 200px;
     padding: 1rem 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    flex-direction: column;
     z-index: 1000;
   }
 
   nav.right-nav ul {
-    flex-direction: column;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -750,83 +740,32 @@ footer p {
     border-top: 1px solid rgba(255,255,255,0.2);
   }
 
-  /* Когда меню открыто — показываем */
-  header.menu-open nav.right-nav {
+  /* Показываем меню, когда у header есть класс menu-open */
+  header.site-header.menu-open nav.right-nav {
     display: flex;
   }
 }
 
-/* Десктоп: меню всегда показываем горизонтально */
-/* Скрываем кнопку гамбургер на десктопе */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1001;
-}
-
-/* Скрываем меню в мобильной версии по умолчанию */
-header.site-header nav.right-nav,
-footer nav.footer-nav {
-  display: none;
-}
-
-/* Кнопки гамбургер видимы только на мобилках */
-.menu-toggle,
-.footer-menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1001;
-}
-
-/* Показываем кнопки и меню на мобильных */
-@media screen and (max-width: 768px) {
-  .menu-toggle,
-  .footer-menu-toggle {
-    display: block;
+/* На десктопе меню видно всегда, гамбургер скрыт */
+@media screen and (min-width: 769px) {
+  nav.right-nav {
+    display: block !important;
+    position: static;
+    box-shadow: none;
+    width: auto;
   }
 
-  /* Показываем меню, когда есть класс menu-open */
-  header.site-header.menu-open nav.right-nav,
-  footer.menu-open nav.footer-nav {
-    display: block;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #004466;
-    width: 200px;
-    padding: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    z-index: 1000;
-  }
-
-  nav.right-nav ul,
-  nav.footer-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  nav.right-nav ul {
     display: flex;
-    flex-direction: column;
+    gap: 2rem;
   }
 
-  nav.right-nav a,
-  nav.footer-nav a {
-    color: white;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  nav.right-nav a {
+    color: inherit;
+  }
+
+  .menu-toggle {
+    display: none !important;
   }
 }
+
