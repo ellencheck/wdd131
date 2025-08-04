@@ -62,18 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
       formSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
-});
-document.addEventListener('DOMContentLoaded', function () {
-  const toggleButton = document.querySelector('.menu-toggle');
-  const header = document.querySelector('header.site-header');
 
-  if (toggleButton && header) {
-    toggleButton.addEventListener('click', () => {
-      header.classList.toggle('menu-open');
-    });
-  }
-});
-document.addEventListener('DOMContentLoaded', function () {
+  // Обработка обеих кнопок сэндвича — в хедере и футере
   const headerToggle = document.querySelector('.menu-toggle');
   const footerToggle = document.querySelector('.footer-menu-toggle');
   const header = document.querySelector('header.site-header');
@@ -91,5 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
 
 
