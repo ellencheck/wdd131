@@ -758,4 +758,14 @@ footer p {
     color: inherit;
   }
 }
+@media (min-width: 768px) {
+  .site-navigation {
+    display: flex !important;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
 
