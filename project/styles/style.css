@@ -744,3 +744,15 @@ footer p {
     display: block;
   }
 }
+/* По умолчанию скрываем сэндвич */
+.menu-toggle {
+  display: none;
+}
+
+/* Показываем только на мобильных экранах */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
