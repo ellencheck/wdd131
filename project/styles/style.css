@@ -734,8 +734,7 @@ footer p {
   header.site-header.menu-open nav.right-nav {
     display: flex;
   }
-}
-@media screen and (max-width: 768px) {
+
   /* Скрываем навигацию в футере */
   footer nav {
     display: none !important;
@@ -744,7 +743,25 @@ footer p {
   /* Остальные элементы футера остаются видимыми */
   footer .socialmedia,
   footer p {
-    display: block; /* или просто не трогаем, если уже видимы */
+    display: block; /* можно не трогать, если уже видимы */
   }
 }
 
+@media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  nav.right-nav {
+    display: block !important;
+    position: static;
+    box-shadow: none;
+    width: auto;
+  }
+  nav.right-nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+  nav.right-nav a {
+    color: inherit;
+  }
+}
