@@ -755,4 +755,9 @@ footer p {
     display: block;
   }
 }
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) { ... }
+
 
