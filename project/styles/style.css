@@ -730,38 +730,17 @@ footer p {
     border-top: 1px solid rgba(255,255,255,0.2);
   }
 
-  /* Показываем меню при добавлении класса menu-open */
   header.site-header.menu-open nav.right-nav {
     display: flex;
   }
 
-  /* Скрываем навигацию в футере */
+  /* Скрываем навигацию в футере на мобилках */
   footer nav {
     display: none !important;
   }
 
-  /* Остальные элементы футера остаются видимыми */
   footer .socialmedia,
   footer p {
-    display: block; /* можно не трогать, если уже видимы */
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-  nav.right-nav {
-    display: block !important;
-    position: static;
-    box-shadow: none;
-    width: auto;
-  }
-  nav.right-nav ul {
-    display: flex;
-    gap: 2rem;
-  }
-  nav.right-nav a {
-    color: inherit;
+    display: block;
   }
 }
