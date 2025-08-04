@@ -83,4 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.querySelector('.menu-toggle');
+    const header = document.querySelector('.site-header');
+
+    toggleButton.addEventListener('click', function () {
+      header.classList.toggle('menu-open');
+    });
+  });
+</script>
+
 
