@@ -772,47 +772,62 @@ footer p {
 }
 
 /* Мобильные стили */
+/* --- Header menu toggle button --- */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+/* --- Footer menu toggle button --- */
+.footer-menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: relative; /* можно позиционировать по желанию */
+  margin-bottom: 0.5rem;
+}
+
+/* --- Mobile styles --- */
 @media screen and (max-width: 768px) {
+  /* Header styles */
   header.site-header {
     position: relative;
-    background-color: #004466; /* можно подкорректировать */
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
-
-  /* Показываем кнопку гамбургер на мобильных */
   .menu-toggle {
     display: block;
   }
-
-  /* Меню по умолчанию скрыто */
   nav.right-nav {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
     background-color: #004466;
-    width: 100%;
-    max-width: 300px;
+    width: 200px;
     flex-direction: column;
     padding: 1rem 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     z-index: 1000;
   }
-
   nav.right-nav ul {
     flex-direction: column;
     margin: 0;
     padding: 0;
     list-style: none;
   }
-
   nav.right-nav li {
     margin: 0;
   }
-
   nav.right-nav a {
     color: white;
     padding: 0.75rem 1.5rem;
@@ -820,36 +835,68 @@ footer p {
     text-decoration: none;
     border-top: 1px solid rgba(255,255,255,0.2);
   }
-
-  /* Когда меню открыто — показываем */
   header.menu-open nav.right-nav {
+    display: flex;
+  }
+
+  /* Footer styles */
+  footer {
+    background-color: #004466;
+    color: white;
+    padding: 1.2rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .footer-menu-toggle {
+    display: block;
+  }
+  nav.footer-nav {
+    display: none;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+  nav.footer-nav ul {
+    padding: 0;
+    margin: 0;
+  }
+  nav.footer-nav li {
+    margin: 0;
+  }
+  nav.footer-nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+  }
+  footer.menu-open nav.footer-nav {
     display: flex;
   }
 }
 
-/* Десктоп: меню всегда показываем горизонтально */
+/* Desktop styles - меню всегда видно */
 @media screen and (min-width: 769px) {
-  header.site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+  .menu-toggle,
+  .footer-menu-toggle {
+    display: none !important;
   }
-
-  nav.right-nav {
+  nav.right-nav,
+  nav.footer-nav {
     display: block !important;
   }
-
-  nav.right-nav ul {
+  nav.right-nav ul,
+  nav.footer-nav ul {
     display: flex;
     gap: 2rem;
     margin: 0;
     padding: 0;
     list-style: none;
   }
-
-  nav.right-nav a {
+  nav.right-nav a,
+  nav.footer-nav a {
     color: inherit;
     text-decoration: none;
   }
 }
+
