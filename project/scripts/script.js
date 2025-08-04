@@ -63,3 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.querySelector('.menu-toggle');
+  const header = document.querySelector('header.site-header');
+
+  if (toggleButton && header) {
+    toggleButton.addEventListener('click', () => {
+      header.classList.toggle('menu-open');
+    });
+  }
+});
+
