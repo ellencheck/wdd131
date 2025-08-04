@@ -685,6 +685,12 @@ footer p {
   font-size: 14px;
   margin: 0;
 }
+/* По умолчанию скрываем кнопку меню */
+.menu-toggle {
+  display: none;
+}
+
+/* Только на мобильных — показываем кнопку, прячем меню */
 @media screen and (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -712,29 +718,12 @@ footer p {
     z-index: 1000;
   }
 
-  nav.right-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  nav.right-nav li {
-    margin: 0;
-  }
-
-  nav.right-nav a {
-    color: white;
-    padding: 0.75rem 1.5rem;
-    display: block;
-    text-decoration: none;
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-
+  /* Показываем меню, если открыт хедер с классом menu-open */
   header.site-header.menu-open nav.right-nav {
     display: flex;
   }
 
-  /* Скрываем навигацию в футере на мобилках */
+  /* Навигация в футере скрыта на мобильных */
   footer nav {
     display: none !important;
   }
@@ -744,20 +733,4 @@ footer p {
     display: block;
   }
 }
-/* По умолчанию скрываем сэндвич */
-.menu-toggle {
-  display: none;
-}
-
-/* Показываем только на мобильных экранах */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-}
-.menu-toggle {
-  display: none;
-}
-@media (max-width: 768px) { ... }
-
 
