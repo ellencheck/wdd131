@@ -685,9 +685,7 @@ footer p {
   font-size: 14px;
   margin: 0;
 }
-/* Кнопка гамбургер и мобильное меню — только для мобилок */
 @media screen and (max-width: 768px) {
-  /* Показываем кнопку гамбургер */
   .menu-toggle {
     display: block;
     font-size: 2rem;
@@ -701,7 +699,6 @@ footer p {
     z-index: 1001;
   }
 
-  /* Скрываем основное меню */
   nav.right-nav {
     display: none;
     position: absolute;
@@ -733,84 +730,8 @@ footer p {
     border-top: 1px solid rgba(255,255,255,0.2);
   }
 
-  /* При добавлении класса menu-open на header показываем меню */
+  /* Показываем меню при добавлении класса menu-open */
   header.site-header.menu-open nav.right-nav {
     display: flex;
   }
 }
-
-/* На десктопе — меню показываем, кнопка скрыта, без изменений */
-@media screen and (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-  nav.right-nav {
-    display: block !important;
-    position: static;
-    box-shadow: none;
-    width: auto;
-  }
-  nav.right-nav ul {
-    display: flex;
-    gap: 2rem;
-  }
-  nav.right-nav a {
-    color: inherit;
-  }
-}
-@media (min-width: 768px) {
-  .site-navigation {
-    display: flex !important;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-}
-
-/* По умолчанию скрываем меню на мобильных */
-@media (max-width: 768px) {
-  .right-nav {
-    display: none;
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
-
-  header.site-header.menu-open .right-nav {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 1rem;
-  }
-
-  /* Прячем меню на десктопе */
-  .right-nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
-  .right-nav li {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-
-  .right-nav a {
-    text-decoration: none;
-    color: #333;
-  }
-}
-
-
