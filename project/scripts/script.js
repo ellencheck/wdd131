@@ -73,4 +73,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const headerToggle = document.querySelector('.menu-toggle');
+  const footerToggle = document.querySelector('.footer-menu-toggle');
+  const header = document.querySelector('header.site-header');
+  const footer = document.querySelector('footer');
+
+  if (headerToggle && header) {
+    headerToggle.addEventListener('click', () => {
+      header.classList.toggle('menu-open');
+    });
+  }
+
+  if (footerToggle && footer) {
+    footerToggle.addEventListener('click', () => {
+      footer.classList.toggle('menu-open');
+    });
+  }
+});
+
 
