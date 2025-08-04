@@ -733,4 +733,75 @@ footer p {
     display: block;
   }
 }
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+  }
+
+  nav.right-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #004466;
+    width: 200px;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    flex-direction: column;
+    z-index: 1000;
+  }
+
+  nav.right-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  nav.right-nav li {
+    margin: 0;
+  }
+
+  nav.right-nav a {
+    color: white;
+    padding: 0.75rem 1.5rem;
+    display: block;
+    text-decoration: none;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Показываем меню при добавлении класса menu-open к header */
+  header.site-header.menu-open nav.right-nav {
+    display: flex;
+  }
+}
+
+/* На десктопе кнопка скрыта, меню всегда видно */
+@media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  nav.right-nav {
+    display: block !important;
+    position: static;
+    box-shadow: none;
+    width: auto;
+  }
+  nav.right-nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+  nav.right-nav a {
+    color: inherit;
+  }
+}
+
 
