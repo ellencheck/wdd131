@@ -771,9 +771,15 @@ footer p {
   z-index: 1001;
 }
 
-/* Мобильные стили */
-/* --- Header menu toggle button --- */
-.menu-toggle {
+/* Скрываем меню в мобильной версии по умолчанию */
+header.site-header nav.right-nav,
+footer nav.footer-nav {
+  display: none;
+}
+
+/* Кнопки гамбургер видимы только на мобилках */
+.menu-toggle,
+.footer-menu-toggle {
   display: none;
   font-size: 2rem;
   background: none;
@@ -786,117 +792,41 @@ footer p {
   z-index: 1001;
 }
 
-/* --- Footer menu toggle button --- */
-.footer-menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  position: relative; /* можно позиционировать по желанию */
-  margin-bottom: 0.5rem;
-}
-
-/* --- Mobile styles --- */
+/* Показываем кнопки и меню на мобильных */
 @media screen and (max-width: 768px) {
-  /* Header styles */
-  header.site-header {
-    position: relative;
-  }
-  .menu-toggle {
+  .menu-toggle,
+  .footer-menu-toggle {
     display: block;
   }
-  nav.right-nav {
-    display: none;
+
+  /* Показываем меню, когда есть класс menu-open */
+  header.site-header.menu-open nav.right-nav,
+  footer.menu-open nav.footer-nav {
+    display: block;
     position: absolute;
     top: 100%;
     right: 0;
     background-color: #004466;
     width: 200px;
-    flex-direction: column;
     padding: 1rem 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     z-index: 1000;
   }
-  nav.right-nav ul {
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  nav.right-nav li {
-    margin: 0;
-  }
-  nav.right-nav a {
-    color: white;
-    padding: 0.75rem 1.5rem;
-    display: block;
-    text-decoration: none;
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-  header.menu-open nav.right-nav {
-    display: flex;
-  }
 
-  /* Footer styles */
-  footer {
-    background-color: #004466;
-    color: white;
-    padding: 1.2rem 1rem;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-  .footer-menu-toggle {
-    display: block;
-  }
-  nav.footer-nav {
-    display: none;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-  }
-  nav.footer-nav ul {
-    padding: 0;
-    margin: 0;
-  }
-  nav.footer-nav li {
-    margin: 0;
-  }
-  nav.footer-nav a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 0.5rem 0;
-  }
-  footer.menu-open nav.footer-nav {
-    display: flex;
-  }
-}
-
-/* Desktop styles - меню всегда видно */
-@media screen and (min-width: 769px) {
-  .menu-toggle,
-  .footer-menu-toggle {
-    display: none !important;
-  }
-  nav.right-nav,
-  nav.footer-nav {
-    display: block !important;
-  }
   nav.right-nav ul,
   nav.footer-nav ul {
-    display: flex;
-    gap: 2rem;
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
+    display: flex;
+    flex-direction: column;
   }
+
   nav.right-nav a,
   nav.footer-nav a {
-    color: inherit;
+    color: white;
+    padding: 0.75rem 1.5rem;
     text-decoration: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
-
