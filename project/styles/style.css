@@ -685,17 +685,9 @@ footer p {
   font-size: 14px;
   margin: 0;
 }
-/* Скрываем кнопку гамбургер и меню на десктопе */
-.menu-toggle {
-  display: none;
-}
-
-/* На мобильных показываем гамбургер и скрываем меню */
+/* Кнопка гамбургер и мобильное меню — только для мобилок */
 @media screen and (max-width: 768px) {
-  header.site-header {
-    position: relative;
-  }
-
+  /* Показываем кнопку гамбургер */
   .menu-toggle {
     display: block;
     font-size: 2rem;
@@ -709,6 +701,7 @@ footer p {
     z-index: 1001;
   }
 
+  /* Скрываем основное меню */
   nav.right-nav {
     display: none;
     position: absolute;
@@ -740,32 +733,29 @@ footer p {
     border-top: 1px solid rgba(255,255,255,0.2);
   }
 
-  /* Показываем меню, когда у header есть класс menu-open */
+  /* При добавлении класса menu-open на header показываем меню */
   header.site-header.menu-open nav.right-nav {
     display: flex;
   }
 }
 
-/* На десктопе меню видно всегда, гамбургер скрыт */
+/* На десктопе — меню показываем, кнопка скрыта, без изменений */
 @media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
   nav.right-nav {
     display: block !important;
     position: static;
     box-shadow: none;
     width: auto;
   }
-
   nav.right-nav ul {
     display: flex;
     gap: 2rem;
   }
-
   nav.right-nav a {
     color: inherit;
-  }
-
-  .menu-toggle {
-    display: none !important;
   }
 }
 
