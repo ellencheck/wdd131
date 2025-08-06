@@ -690,6 +690,7 @@ footer p {
   display: none;
 }
 
+/* Показываем кнопку меню только на мобильных */
 @media screen and (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -704,6 +705,7 @@ footer p {
     z-index: 1001;
   }
 
+  /* Мобильное меню */
   nav.right-nav {
     display: none;
     position: absolute;
@@ -712,7 +714,7 @@ footer p {
     background-color: #004466;
     width: 200px;
     padding: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     flex-direction: column;
     z-index: 1000;
   }
@@ -732,15 +734,15 @@ footer p {
     padding: 0.75rem 1.5rem;
     display: block;
     text-decoration: none;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* Показываем меню, если header получил класс menu-open */
+  /* Открытие меню при добавлении класса menu-open к header */
   header.site-header.menu-open nav.right-nav {
     display: flex;
   }
 
-  /* Скрываем навигацию в футере на мобильных */
+  /* Скрываем футер-меню на мобильных */
   footer nav {
     display: none !important;
   }
@@ -748,5 +750,37 @@ footer p {
   footer .socialmedia,
   footer p {
     display: block;
+  }
+}
+
+/* На компьютерах меню всегда видно, кнопка скрыта */
+@media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  nav.right-nav {
+    display: block !important;
+    position: static;
+    width: auto;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+  }
+
+  nav.right-nav ul {
+    display: flex;
+    gap: 1.5em;
+  }
+
+  nav.right-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+
+  nav.right-nav a:hover {
+    color: #ffab91;
   }
 }
