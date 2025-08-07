@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -18,11 +19,19 @@ nav ul {
   display: flex;
   gap: 1em;
   padding: 0;
+  margin: 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffccbc;
 }
 
 .hero {
@@ -37,42 +46,35 @@ nav a {
   align-items: center;
   text-align: center;
   position: relative;
-  overflow: hidden; /* важно для обрезки оверлея */
+  overflow: hidden;
 }
 
-.hero::before {
+.hero::before,
+.hero::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* затемнение — можно усилить или ослабить */
-  z-index: 1;
+  z-index: 0;
+}
+
+.hero::before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.hero::after {
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .hero > * {
   position: relative;
-  z-index: 2; /* чтобы контент был поверх затемнения */
+  z-index: 2;
 }
 
-.hero h1, .hero p {
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7); /* дополнительно для читаемости */
-}
-
-
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.4); /* затемнение для контраста */
-  z-index: 0;
-}
-
-.hero h2, .hero button {
-  position: relative;
-  z-index: 1;
+.hero h1, .hero p, .hero h2, .hero button {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .hero h2 {
@@ -81,8 +83,8 @@ nav a {
 }
 
 .hero button, .cta button {
-  padding: 0.9em 2em; /* увеличено */
-  font-size: 1.1em;   /* увеличено */
+  padding: 0.9em 2em;
+  font-size: 1.1em;
   background: #ff7043;
   color: white;
   border: none;
@@ -102,13 +104,13 @@ nav a {
   justify-content: space-around;
   padding: 2em;
   background: #e0f2f1;
-  flex-wrap: wrap; /* добавлено для адаптивности */
-  gap: 3em; /* добавлено для отступа между карточками */
+  flex-wrap: wrap;
+  gap: 3em;
 }
 
 .feature {
   text-align: center;
-  max-width: 320px; /* чуть больше */
+  max-width: 320px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
@@ -121,7 +123,7 @@ nav a {
 }
 
 .feature img {
-  width: 180px; /* увеличено */
+  width: 180px;
   height: auto;
   border-radius: 10px;
   margin-bottom: 1em;
@@ -143,11 +145,11 @@ nav a {
   display: flex;
   padding: 2em;
   gap: 2em;
-  flex-wrap: wrap; /* на случай маленьких экранов */
+  flex-wrap: wrap;
 }
 
 .about .gallery img {
-  width: 160px; /* увеличено */
+  width: 160px;
   margin: 0.8em;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -181,101 +183,34 @@ footer .social-icons a {
   text-decoration: none;
 }
 
-/* Остальной твой CSS без изменений */
-.header-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.branding {
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
-}
-
-.branding img {
-  height: 50px;
-  width: auto;
-}
-
-header h1 {
-  font-size: 1.8em;
-  margin: 0;
-  white-space: nowrap;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2em;
-  margin: 0;
-  padding: 0;
-}
-
-nav li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1em;
-  transition: color 0.3s ease;
-}
-
-nav li a:hover {
-  color: #ffccbc;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 1.5em;
-}
-
-.header-left img {
-  height: 50px;
-  width: auto;
-}
-
-.header-left h1 {
-  font-size: 1.6em;
-  margin: 0;
-  white-space: nowrap;
-  color: white;
-}
-
-.header-left nav ul {
-  display: flex;
-  gap: 1.5em;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.header-left nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1em;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.header-left nav ul li a:hover {
-  color: #ffccbc;
-}
-
-/* Толстый красивый хеддер */
-.main-header {
+.main-header, .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #004d40;
   color: white;
-  padding: 2em 2em;
-  position: relative;
+  padding: 2em;
   height: 180px;
+  position: relative;
 }
 
-/* Меню слева */
+.branding, .left-block {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.branding img, .left-block img {
+  height: 50px;
+  width: auto;
+}
+
+.branding h1, .left-block h1, header h1 {
+  font-size: 1.8em;
+  margin: 0;
+  white-space: nowrap;
+}
+
 .nav-left {
   position: absolute;
   left: 2em;
@@ -283,15 +218,15 @@ nav li a:hover {
   transform: translateY(-50%);
 }
 
-.nav-left nav ul {
+.nav-left nav ul, .right-nav ul {
+  list-style: none;
   display: flex;
   gap: 1.5em;
-  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav-left nav ul li a {
+.nav-left nav ul li a, .right-nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 1em;
@@ -299,11 +234,10 @@ nav li a:hover {
   transition: color 0.3s ease;
 }
 
-.nav-left nav ul li a:hover {
-  color: #ffccbc;
+.right-nav ul li a:hover {
+  color: #ffab91;
 }
 
-/* Центрированный логотип с названием */
 .logo-center {
   margin: 0 auto;
   text-align: center;
@@ -319,57 +253,6 @@ nav li a:hover {
   margin: 0;
   font-size: 2em;
   font-weight: bold;
-}
-
-/* Общий стиль хедера */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #004d40;
-  color: white;
-  padding: 1em 2em;
-  height: 120px;
-  box-sizing: border-box;
-}
-
-/* Левая часть: логотип + название */
-.left-block {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-}
-
-.left-block img {
-  height: 80px;
-  width: auto;
-}
-
-.left-block h1 {
-  font-size: 2em;
-  margin: 0;
-  white-space: nowrap;
-}
-
-/* Правая часть: меню */
-.right-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5em;
-  margin: 0;
-  padding: 0;
-}
-
-.right-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.right-nav ul li a:hover {
-  color: #ffab91;
 }
 
 .contact-container {
@@ -430,7 +313,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #e65c00;
 }
-/* Контактная секция */
+
 .contact-section {
   display: flex;
   flex-direction: column;
@@ -453,7 +336,6 @@ button[type="submit"]:hover {
   max-width: 600px;
 }
 
-/* Контактная форма */
 .contact-form {
   max-width: 600px;
   width: 100%;
@@ -499,11 +381,9 @@ button[type="submit"]:hover {
 }
 
 .contact-form button:hover {
-  background-color: #ffccbc;;
+  background-color: #ffccbc;
 }
 
-/* Медиа-запрос для мобильных */
-/* Показываем кнопку меню только на мобильных */
 @media screen and (max-width: 768px) {
   #menuBtn {
     display: block;
@@ -554,7 +434,6 @@ button[type="submit"]:hover {
   }
 }
 
-/* На компьютерах кнопка скрыта, меню всегда видно */
 @media screen and (min-width: 769px) {
   #menuBtn {
     display: none;
