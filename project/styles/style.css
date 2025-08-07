@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -489,4 +488,5 @@ footer {
 .footer-content .social-icons img:hover {
   transform: scale(1.2);
 }
+
 
