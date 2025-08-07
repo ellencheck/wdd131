@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tour = bookingForm.elements['tour'].value;
       const people = bookingForm.elements['people'].value;
 
-      alert(`Thank you for booking the "${tour}" tour for ${people} people! We will contact you soon.`);
+      alert(Thank you for booking the "${tour}" tour for ${people} people! We will contact you soon.);
       bookingForm.reset();
 
       const formSection = document.getElementById('booking-form-section');
@@ -63,13 +63,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Hamburger menu toggle
-  const menuBtn = document.getElementById("menuBtn");
-  const navMenu = document.getElementById("navMenu");
-  if (menuBtn && navMenu) {
-    menuBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
+  // Обработка обеих кнопок сэндвича — в хедере и футере
+  const headerToggle = document.querySelector('.menu-toggle');
+  const footerToggle = document.querySelector('.footer-menu-toggle');
+  const header = document.querySelector('header.site-header');
+  const footer = document.querySelector('footer');
+
+  if (headerToggle && header) {
+    headerToggle.addEventListener('click', () => {
+      header.classList.toggle('menu-open');
+    });
+  }
+
+  if (footerToggle && footer) {
+    footerToggle.addEventListener('click', () => {
+      footer.classList.toggle('menu-open');
     });
   }
 });
-
+// Hamburger menu toggle
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
