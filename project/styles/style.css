@@ -685,145 +685,79 @@ footer p {
   font-size: 14px;
   margin: 0;
 }
-/* Кнопка меню - спрятана на десктопе */
-.menu-toggle {
+
+/* Скрываем кнопку и мобильное меню на десктопе */
+.mobile-menu-button {
   display: none;
 }
 
-/* Мобильные стили */
-@media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    background: #ff7043;
-    border-radius: 8px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    z-index: 1100;
-  }
+.mobile-menu {
+  display: none;
+  background: #004466;
+  padding: 1em;
+}
 
-  /* Простая иконка "сэндвич" из трех полосок */
-  .menu-toggle span,
-  .menu-toggle span::before,
-  .menu-toggle span::after {
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.7em 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.mobile-menu ul li a:hover {
+  color: #ffccbc;
+}
+
+/* Десктопное меню всегда видно */
+.desktop-menu ul {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.desktop-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.desktop-menu ul li a:hover {
+  color: #ffab91;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu-button {
     display: block;
-    background: white;
-    height: 3px;
-    width: 24px;
-    border-radius: 2px;
-    position: relative;
-  }
-
-  .menu-toggle span::before,
-  .menu-toggle span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    transition: 0.3s;
-  }
-
-  .menu-toggle span::before {
-    top: -8px;
-  }
-
-  .menu-toggle span::after {
-    top: 8px;
-  }
-
-  /* Панель мобильного меню - спрятана справа */
-  nav.right-nav {
-    position: fixed;
-    top: 0;
-    right: -250px; /* скрыта за экраном */
-    width: 250px;
-    height: 100vh;
-    background-color: #004466;
-    box-shadow: -3px 0 8px rgba(0,0,0,0.3);
-    flex-direction: column;
-    padding-top: 60px;
-    transition: right 0.3s ease;
-    z-index: 1050;
-  }
-
-  nav.right-nav.open {
-    right: 0; /* показываем меню */
-  }
-
-  nav.right-nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
-  nav.right-nav ul li a {
-    padding: 1rem 2rem;
+    background: #ff7043;
+    border: none;
     color: white;
-    text-decoration: none;
+    padding: 0.7em 1.5em;
     font-size: 1.1em;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255,112,67,0.5);
+    transition: background 0.3s ease;
   }
-
-  nav.right-nav ul li a:hover {
-    background-color: #ff7043;
+  .mobile-menu-button:hover {
+    background: #e65c32;
   }
-
-  /* Оверлей, затемняющий фон при открытом меню */
-  .menu-overlay {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 1040;
-  }
-
-  .menu-overlay.active {
-    opacity: 1;
-    pointer-events: all;
+  .mobile-menu.show {
+    display: block;
   }
 }
 
-/* На десктопе меню всегда открыто, кнопка скрыта */
-@media screen and (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-
-  nav.right-nav {
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    box-shadow: none !important;
-    background: none !important;
-    flex-direction: row !important;
-    right: auto !important;
-    padding-top: 0 !important;
-    transition: none !important;
-  }
-
-  nav.right-nav ul {
-    flex-direction: row !important;
-    gap: 1.5em !important;
-  }
-
-  nav.right-nav ul li a {
-    border-bottom: none !important;
-  }
-}
-@media screen and (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
-}
 
