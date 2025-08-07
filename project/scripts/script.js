@@ -1,13 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Сэндвич-меню (мобильное)
-  const menuBtn = document.getElementById("menuBtn");
-  const navMenu = document.getElementById("navMenu");
+ const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav.right-nav');
+const overlay = document.createElement('div');
 
-  if (menuBtn && navMenu) {
-    menuBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
-    });
+overlay.classList.add('menu-overlay');
+document.body.appendChild(overlay);
+
+function closeMenu() {
+  nav.classList.remove('open');
+  overlay.classList.remove('active');
+}
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = nav.classList.contains('open');
+  if (isOpen) {
+    closeMenu();
+  } else {
+    nav.classList.add('open');
+    overlay.classList.add('active');
   }
+});
+
+overlay.addEventListener('click', closeMenu);
+
+// Опционально: закрывать меню при клике по ссылке внутри nav
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      closeMenu();
+    }
+  });
+});
+
 
   // Кнопки "Book Now"
   const bookButtons = document.querySelectorAll("button, a");
@@ -54,4 +78,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 
