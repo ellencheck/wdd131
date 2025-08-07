@@ -584,4 +584,35 @@ button[type="submit"]:hover {
   }
 }
 
+footer {
+  background-color: #004d40;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+footer .social-icons {
+  margin-top: 1rem;
+}
+
+footer .social-icons a {
+  margin: 0 0.5rem;
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #ff7043;
+  text-shadow: 0 0 5px #ff7043;
+}
+
 
