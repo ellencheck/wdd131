@@ -462,3 +462,31 @@ button[type="submit"]:hover {
     color: #ffab91;
   }
 }
+footer {
+  text-align: center;
+  padding: 2em;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content .social-icons {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.footer-content .social-icons img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.footer-content .social-icons img:hover {
+  transform: scale(1.2);
+}
+
