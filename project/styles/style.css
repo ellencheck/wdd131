@@ -686,6 +686,7 @@ footer p {
   margin: 0;
 }
 /* По умолчанию скрываем кнопку меню */
+/* По умолчанию скрываем кнопку меню */
 .menu-toggle {
   display: none;
 }
@@ -701,35 +702,29 @@ footer p {
   nav.right-nav {
     display: none;
     position: absolute;
-
     background-color: #004466;
     width: 200px;
     padding: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     flex-direction: column;
     z-index: 1000;
   }
+
+  nav.right-nav a {
     padding: 0.75rem 1.5rem;
     display: block;
     text-decoration: none;
-    border-top: 1px solid rgba(255,255,255,0.2);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   /* Показываем меню, если header получил класс menu-open */
-  /* Открытие меню при добавлении класса menu-open к header */
   header.site-header.menu-open nav.right-nav {
     display: flex;
   }
 
   /* Скрываем навигацию в футере на мобильных */
-  /* Скрываем футер-меню на мобильных */
   footer nav {
     display: none !important;
-  }
-@@ -750,3 +752,35 @@
-    display: block;
   }
 }
 
@@ -764,4 +759,3 @@ footer p {
     color: #ffab91;
   }
 }
-
