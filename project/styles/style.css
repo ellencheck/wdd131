@@ -685,14 +685,10 @@ footer p {
   font-size: 14px;
   margin: 0;
 }
-/* По умолчанию скрываем кнопку меню */
-.menu-toggle {
-  display: none;
-}
-
-/* Показываем кнопку меню только на мобильных */
+/* Только мобильные устройства */
 @media screen and (max-width: 768px) {
-  .menu-toggle {
+  /* Показываем кнопку */
+  #menuBtn {
     display: block;
     font-size: 2rem;
     background: none;
@@ -705,8 +701,8 @@ footer p {
     z-index: 1001;
   }
 
-  /* Мобильное меню */
-  nav.right-nav {
+  /* Меню по умолчанию скрыто */
+  #navMenu {
     display: none;
     position: absolute;
     top: 100%;
@@ -719,17 +715,22 @@ footer p {
     z-index: 1000;
   }
 
-  nav.right-nav ul {
+  /* Показываем при добавлении .open */
+  #navMenu.open {
+    display: flex;
+  }
+
+  #navMenu ul {
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  nav.right-nav li {
+  #navMenu li {
     margin: 0;
   }
 
-  nav.right-nav a {
+  #navMenu a {
     color: white;
     padding: 0.75rem 1.5rem;
     display: block;
@@ -737,12 +738,7 @@ footer p {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* Открытие меню при добавлении класса menu-open к header */
-  header.site-header.menu-open nav.right-nav {
-    display: flex;
-  }
-
-  /* Скрываем футер-меню на мобильных */
+  /* Скрываем навигацию футера */
   footer nav {
     display: none !important;
   }
@@ -755,12 +751,12 @@ footer p {
 
 /* На компьютерах меню всегда видно, кнопка скрыта */
 @media screen and (min-width: 769px) {
-  .menu-toggle {
+  #menuBtn {
     display: none !important;
   }
 
-  nav.right-nav {
-    display: block !important;
+  #navMenu {
+    display: flex !important;
     position: static;
     width: auto;
     flex-direction: row;
@@ -768,19 +764,19 @@ footer p {
     box-shadow: none;
   }
 
-  nav.right-nav ul {
+  #navMenu ul {
     display: flex;
     gap: 1.5em;
   }
 
-  nav.right-nav a {
+  #navMenu a {
     color: white;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;
   }
 
-  nav.right-nav a:hover {
+  #navMenu a:hover {
     color: #ffab91;
   }
 }
