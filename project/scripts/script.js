@@ -1,39 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
- const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('nav.right-nav');
-const overlay = document.createElement('div');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav.right-nav');
 
-overlay.classList.add('menu-overlay');
-document.body.appendChild(overlay);
+  // Проверка: если меню или навигация отсутствуют — не выполнять код меню
+  if (menuToggle && nav) {
+    const overlay = document.createElement('div');
+    overlay.classList.add('menu-overlay');
+    document.body.appendChild(overlay);
 
-function closeMenu() {
-  nav.classList.remove('open');
-  overlay.classList.remove('active');
-}
-
-menuToggle.addEventListener('click', () => {
-  const isOpen = nav.classList.contains('open');
-  if (isOpen) {
-    closeMenu();
-  } else {
-    nav.classList.add('open');
-    overlay.classList.add('active');
-  }
-});
-
-overlay.addEventListener('click', closeMenu);
-
-// Опционально: закрывать меню при клике по ссылке внутри nav
-nav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
-      closeMenu();
+    function closeMenu() {
+      nav.classList.remove('open');
+      overlay.classList.remove('active');
     }
-  });
-});
 
+    menuToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.contains('open');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        nav.classList.add('open');
+        overlay.classList.add('active');
+      }
+    });
 
- const bookButtons = document.querySelectorAll("button, a");
+    overlay.addEventListener('click', closeMenu);
+
+    // Закрываем меню при клике по ссылке
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          closeMenu();
+        }
+      });
+    });
+  }
+
+  // BOOK NOW кнопки
+  const bookButtons = document.querySelectorAll("button, a");
   bookButtons.forEach(btn => {
     if (btn.textContent.trim() === "Book Now") {
       btn.addEventListener("click", function (e) {
@@ -43,7 +46,7 @@ nav.querySelectorAll('a').forEach(link => {
     }
   });
 
-  // Показываем форму, если переход с якорем
+  // Показ формы, если переход с якорем
   if (window.location.hash === "#booking-form-section") {
     const formSection = document.getElementById('booking-form-section');
     if (formSection) {
