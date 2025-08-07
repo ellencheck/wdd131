@@ -819,3 +819,11 @@ footer p {
     border-bottom: none !important;
   }
 }
+@media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
