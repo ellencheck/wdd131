@@ -685,77 +685,137 @@ footer p {
   font-size: 14px;
   margin: 0;
 }
-/* По умолчанию скрываем кнопку меню */
-/* По умолчанию скрываем кнопку меню */
+/* Кнопка меню - спрятана на десктопе */
 .menu-toggle {
   display: none;
 }
 
-/* Показываем кнопку меню только на мобильных */
+/* Мобильные стили */
 @media screen and (max-width: 768px) {
   .menu-toggle {
-    display: block;
-    z-index: 1001;
-  }
-
-  /* Мобильное меню */
-  nav.right-nav {
-    display: none;
-    position: absolute;
-    background-color: #004466;
-    width: 200px;
-    padding: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    flex-direction: column;
-    z-index: 1000;
-  }
-
-  nav.right-nav a {
-    padding: 0.75rem 1.5rem;
-    display: block;
-    text-decoration: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  /* Показываем меню, если header получил класс menu-open */
-  header.site-header.menu-open nav.right-nav {
     display: flex;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: #ff7043;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
   }
 
-  /* Скрываем навигацию в футере на мобильных */
-  footer nav {
-    display: none !important;
+  /* Простая иконка "сэндвич" из трех полосок */
+  .menu-toggle span,
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    display: block;
+    background: white;
+    height: 3px;
+    width: 24px;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+  }
+
+  .menu-toggle span::before {
+    top: -8px;
+  }
+
+  .menu-toggle span::after {
+    top: 8px;
+  }
+
+  /* Панель мобильного меню - спрятана справа */
+  nav.right-nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* скрыта за экраном */
+    width: 250px;
+    height: 100vh;
+    background-color: #004466;
+    box-shadow: -3px 0 8px rgba(0,0,0,0.3);
+    flex-direction: column;
+    padding-top: 60px;
+    transition: right 0.3s ease;
+    z-index: 1050;
+  }
+
+  nav.right-nav.open {
+    right: 0; /* показываем меню */
+  }
+
+  nav.right-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  nav.right-nav ul li a {
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav.right-nav ul li a:hover {
+    background-color: #ff7043;
+  }
+
+  /* Оверлей, затемняющий фон при открытом меню */
+  .menu-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1040;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: all;
   }
 }
 
-/* На компьютерах меню всегда видно, кнопка скрыта */
+/* На десктопе меню всегда открыто, кнопка скрыта */
 @media screen and (min-width: 769px) {
   .menu-toggle {
     display: none !important;
   }
 
   nav.right-nav {
-    display: block !important;
-    position: static;
-    width: auto;
-    flex-direction: row;
-    background: none;
-    box-shadow: none;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    box-shadow: none !important;
+    background: none !important;
+    flex-direction: row !important;
+    right: auto !important;
+    padding-top: 0 !important;
+    transition: none !important;
   }
 
   nav.right-nav ul {
-    display: flex;
-    gap: 1.5em;
+    flex-direction: row !important;
+    gap: 1.5em !important;
   }
 
-  nav.right-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-    font-weight: 500;
-  }
-
-  nav.right-nav a:hover {
-    color: #ffab91;
+  nav.right-nav ul li a {
+    border-bottom: none !important;
   }
 }
