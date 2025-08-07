@@ -33,8 +33,7 @@ nav.querySelectorAll('a').forEach(link => {
 });
 
 
-  // Кнопки "Book Now"
-  const bookButtons = document.querySelectorAll("button, a");
+ const bookButtons = document.querySelectorAll("button, a");
   bookButtons.forEach(btn => {
     if (btn.textContent.trim() === "Book Now") {
       btn.addEventListener("click", function (e) {
@@ -78,5 +77,6 @@ nav.querySelectorAll('a').forEach(link => {
     });
   }
 });
+
 
 
