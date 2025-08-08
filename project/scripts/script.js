@@ -1,5 +1,5 @@
 
-  // BOOK NOW кнопки
+// BOOK NOW кнопки
   const bookButtons = document.querySelectorAll("button, a");
   bookButtons.forEach(btn => {
     if (btn.textContent.trim() === "Book Now") {
@@ -44,6 +44,7 @@
     });
   }
 });
+
 
 
 
