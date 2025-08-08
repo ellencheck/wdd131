@@ -812,4 +812,42 @@ footer p {
     margin: 0;
   }
 }
+/* === УНИФИКАЦИЯ цвета нижнего меню под хедер/футер === */
+:root {
+  --theme-green: #1b5e20; /* единый тёмно-зелёный цвет */
+}
+
+/* Нижнее меню в мобильной версии */
+.bottom-nav {
+  background-color: var(--theme-green);
+}
+
+/* Хедер и футер (для единообразия, если нужно) */
+.site-header,
+footer {
+  background-color: var(--theme-green);
+}
+
+/* === МОБИЛЬНАЯ ВЕРСИЯ: сохранить стиль логотипа и заголовка как на десктопе === */
+@media (max-width: 768px) {
+  .site-header .left-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .site-header img {
+    height: 60px; /* как в десктопе */
+    width: auto;
+  }
+
+  .site-header h1 {
+    font-size: 2em; /* такой же размер, как в десктопе */
+    color: white;
+    font-family: inherit;
+    margin: 0;
+  }
+}
+
 
