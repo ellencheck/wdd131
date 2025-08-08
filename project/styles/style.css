@@ -868,4 +868,11 @@ footer p {
 .nav-left nav a {
   color: white !important;
 }
+@media (max-width: 768px) {
+  .site-header img {
+    height: 80px !important; /* увеличить лого на мобилке */
+    width: auto;
+  }
+}
+
 
