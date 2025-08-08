@@ -1,23 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // BOOK NOW кнопки
-  const bookButtons = document.querySelectorAll("button, a");
-  bookButtons.forEach(btn => {
-    if (btn.textContent.toLowerCase().includes("book now")) {
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
 
-        if (window.location.pathname.endsWith("tours.html")) {
-          // Уже на tours.html — показываем форму и скроллим
-          const formSection = document.getElementById('booking-form-section');
-          if (formSection) {
-            formSection.style.display = 'block';
-            formSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        } else {
-          // Переход на tours.html с якорем
-          window.location.href = "tours.html#booking-form-section";
+  document.body.addEventListener("click", function (e) {
+    const btn = e.target.closest("button, a");
+    if (!btn) return;
+
+    if (btn.textContent.toLowerCase().includes("book now")) {
+      e.preventDefault();
+
+      if (window.location.pathname.endsWith("tours.html")) {
+        const formSection = document.getElementById('booking-form-section');
+        if (formSection) {
+          formSection.style.display = 'block';
+          formSection.scrollIntoView({ behavior: 'smooth' });
         }
-      });
+      } else {
+        window.location.href = "tours.html#booking-form-section";
+      }
     }
   });
 
@@ -55,9 +53,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-
-
-
-
-
