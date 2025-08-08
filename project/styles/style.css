@@ -861,4 +861,11 @@ footer p {
     display: none;
   }
 }
+.site-header nav a,
+.main-header nav a,
+.header-left nav a,
+.right-nav nav a,
+.nav-left nav a {
+  color: white !important;
+}
 
