@@ -784,4 +784,41 @@ footer p {
     display: none;
   }
 }
+/* === Нижнее меню для мобильной версии === */
+.bottom-nav {
+  display: none; /* Скрыто по умолчанию */
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2e7d32; /* Зелёный цвет как у футера */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em 0;
+  z-index: 1000;
+}
+
+.bottom-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.bottom-nav a.active,
+.bottom-nav a:hover {
+  color: #ffcc80;
+}
+
+/* === Скрыть ненужное и показать нужное на мобилке === */
+@media (max-width: 768px) {
+  .main-nav, .mobile-menu, .mobile-menu-button {
+    display: none !important; /* Убираем бургер и старые меню */
+  }
+
+  .bottom-nav {
+    display: flex;
+  }
+}
+
 
