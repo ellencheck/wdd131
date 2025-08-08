@@ -1,5 +1,5 @@
-
-// BOOK NOW кнопки
+document.addEventListener("DOMContentLoaded", function () {
+  // BOOK NOW кнопки
   const bookButtons = document.querySelectorAll("button, a");
   bookButtons.forEach(btn => {
     if (btn.textContent.trim() === "Book Now") {
