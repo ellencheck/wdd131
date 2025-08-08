@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // BOOK NOW кнопки
   const bookButtons = document.querySelectorAll("button, a");
   bookButtons.forEach(btn => {
-    if (btn.textContent.trim() === "Book Now") {
+    if (btn.textContent.toLowerCase().includes("book now")) {
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         window.location.href = "tours.html#booking-form-section";
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 
 
 
