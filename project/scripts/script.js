@@ -1,39 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav.right-nav');
-
-  // Проверка: если меню или навигация отсутствуют — не выполнять код меню
-  if (menuToggle && nav) {
-    const overlay = document.createElement('div');
-    overlay.classList.add('menu-overlay');
-    document.body.appendChild(overlay);
-
-    function closeMenu() {
-      nav.classList.remove('open');
-      overlay.classList.remove('active');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = nav.classList.contains('open');
-      if (isOpen) {
-        closeMenu();
-      } else {
-        nav.classList.add('open');
-        overlay.classList.add('active');
-      }
-    });
-
-    overlay.addEventListener('click', closeMenu);
-
-    // Закрываем меню при клике по ссылке
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          closeMenu();
-        }
-      });
-    });
-  }
 
   // BOOK NOW кнопки
   const bookButtons = document.querySelectorAll("button, a");
@@ -80,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 
 
 
