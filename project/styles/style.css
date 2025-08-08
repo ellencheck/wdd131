@@ -721,3 +721,67 @@ footer p {
     display: none !important;
   }
 }
+/* --- Десктопная навигация --- */
+.desktop-nav ul {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.desktop-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+  color: #ffab91;
+}
+
+
+/* --- Нижняя навигация для мобильных --- */
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Показываем нижнее меню */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2e7d32; /* Зелёный, как футер */
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8em 0;
+    z-index: 1000;
+  }
+
+  .bottom-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .bottom-nav a:hover,
+  .bottom-nav a.active {
+    color: #c8e6c9; /* Светло-зелёный при наведении */
+  }
+
+  /* Скрыть всё остальное на мобильном */
+  .site-header .left-block,
+  .site-header h1,
+  .desktop-nav,
+  .mobile-menu-button,
+  .mobile-menu {
+    display: none;
+  }
+}
+
